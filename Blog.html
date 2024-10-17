@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Njurex</title>
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- GOOGLE FONT  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CUSTOM STYLE SHEET -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Blog.css">
+</head>
+<body>
+
+<!-- cursor -->
+<div class="cursor"></div>
+<!-- cursor End -->
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-light" >
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="index.html"><img src="logo-landscape.png" alt="" id="logo"></a> -->
+        <a class="navbar-brand" href="index.html"><div id="logo"></div></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            MENU
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link" id="first-nav-item" href="index.html">Product <span id="dot"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="industry-first-nav-item" href="index.html">Industry <span id="dot"></span></a>
+                </li>
+                
+                <!-- <li class="nav-item">
+                    <a class="nav-link" id="customer-first-nav-item" href="#ehs-main-container">
+                        Customer <span id="dot"></span>
+                    </a>
+                </li> -->
+                <!-- RESOURCE                  -->
+                <li class="nav-item">
+                    <a class="nav-link" id="resource-first-nav-item" class="drop-item" onclick="resourceToggleDropdown()">Resource <span id="dot"></span></a>
+                        <div class="resource-dropdown-content" id="resource-dropdown-menu">
+                            <span class="resource-close-button" onclick="resourceCloseDropdown()">×</span> 
+                                <div id="resource-product-dropdown-container">
+                                    <div id="resource-product-dropdown-left"> </div>
+                                    <div id="resource-product-dropdown-mid">
+                                        <div id="resource-product-dropdown-mid-top">
+                                            <div id="resource-line"></div>
+                                                <h6 class="resource-hoverable" id="resource-product-dropdown-content1"><a href="resource.html"> All Resource</a></h6>
+                                                <h6 class="resource-hoverable" id="resource-product-dropdown-content2"><a href="resource.html">Blog</a></h6>
+                                        </div>
+                                        <div id="resource-product-dropdown-mid-bottom">
+                                            <div id="resource-product-dropdown-mid-bottom-container">
+                                                <div id="resource-product-dropdown-mid-bottom-container-follow-container">
+                                                    <span id="dot"></span> <h6 >Follow Us</h6>
+                                                </div>
+                                                <div id="resource-product-dropdown-mid-bottom-container-icon">
+                                                  
+                                                    <a href="#" class="resource-linkedin-icon">
+                                                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/facebook-f.png" alt="facebook-f"/>
+                                                    </a>
+                                                    <a href="#" class="resource-linkedin-icon">
+                                                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/twitterx--v2.png" alt="twitterx--v2"/>
+                                                    </a>
+                                                    <a href="#" class="resource-linkedin-icon">
+                                                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png" alt="instagram-new--v1"/>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="resource-product-dropdown-right">
+                                        <div id="resource-product-dropdown-right-container">
+                                            <div id="resource-product-image"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- RESOURCE END-->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" id="company-first-nav-item" href="#numbers-heading-container">Company <span id="dot"></span></a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" id="technology-first-nav-item"  href="index.html">Technology <span id="dot"></span></a>
+                        </li>
+                        <li  id="last-nav-item">
+                            <a class="nav-link" href="schedule-Demo.html" id="last-nav-link" >Schedule Demo <span id="last-dot"></span></a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+    <!-- Navbar END -->
+
+    <!-- Blog Header -->
+<div id="Blog-main-container">
+    <div id="Blog-second-top-main-container">
+        <div id="Blog-second-top-header">Resource <span>/</span> Blog</div>
+        <div id="Blog-second-top-body">
+            <img src="blog1.jpg" alt="">
+           
+        </div>
+        <div id="Blog-second-top-footer">
+            <h1>A Guide to Secure SaaS Acquisitions: The Four Essential Questions CIOs Should Pose When Assessing Computer Vision AI Providers for Environmental Health and Safety</h1>
+        </div>
+    </div>
+
+</div>
+    <!-- Blog Header -->
+<!-- Blog Work Place -->
+
+<div id="blog-text-main-container">
+    <div id="blog-text-left-container">
+        <div id="blog-text-left-sticky-box">
+            <div id="blog-text-left-sticky-box-heading">Table Of Content</div>
+            <p>1. Who has access to our images and videos?</p>
+            <p>2. How do you guarantee a varied dataset and uphold ethical AI practices?</p>
+            <p>  3. What is the maximum number of AI models you can scale for each camera and each facility?</p>
+            <p>4.  How do you verify the accuracy of the system after it has been deployed?</p>
+        </div>
+    </div>
+    <div id="blog-text-right-container">
+        <div id="blog-text-right-second-container">
+            <p>As CIOs have driven digital transformation efforts within their organizations in recent years, computer vision AI technologies tailored for environmental health and safety (EHS) applications have rapidly transitioned from being relatively unknown to essential tools for workplace safety. The increasing adoption of these solutions marks significant progress in bridging the long-standing EHS innovation gap. However, this surge in popularity also presents CIOs with the challenge of navigating a broader array of potential vendors, often accompanied by more complex and confusing marketing claims than ever before.</p>
+            <br>
+            <p>Selecting the right vendor requires thorough evaluation of not just technological capabilities but also a range of factors, including ethics, data management, and operational effectiveness. Here are four critical questions that CIOs should pose to potential vendors to assist in their decision-making process:</p>
+            <br>
+            <h2>1.  Who has access to our images and videos?</h2>
+            <p><b>Why it matters:</b> Transparency and security are critical when handling sensitive data. It's important to examine whether the vendor depends on third parties for crucial tasks, such as data labeling. Any involved third parties must comply with strict security measures to mitigate the risk of data breaches. However, confirming these practices can be difficult, and the exposure to third-party risks may continue to be a concern.</p>
+            <br>
+            <p>
+                Moreover, I have witnessed the challenges that can occur when third-party involvement hinders the prompt processing of hazard detection and alerting functions. It's crucial to verify that your vendor maintains strong, direct control over data processing or, at the very least, has solid agreements with all parties involved to protect data integrity and guarantee operational responsiveness.</p>
+            <h2>2. How do you guarantee a varied dataset and uphold ethical practices in AI?</h2>
+            <p><b>Why it matters:</b> The effectiveness and fairness of AI-driven solutions are largely contingent on diverse datasets and ethical development standards. These datasets should include a broad range of environmental conditions, equipment types, physical processes, and human factors, such as varying skin tones, body sizes, and clothing styles. This diversity enables AI systems to perform effectively across different real-world situations and helps to mitigate biases that may result from using homogeneous data.</p>
+            <h2>What to consider when evaluating vendors</h2>
+            <p><b>• Dataset diversity:</b> Ask about the sources of the vendor’s data. Reputable vendors should obtain data from diverse settings and conditions to guarantee the robustness and adaptability of their AI models. Verify if they consider a wide range of human-related factors and physical environments in their datasets.</p>
+            <br>
+            <p><b>• Ethical AI practices:</b>Assess how the vendor handles privacy and ethical considerations. Look for the implementation of anonymization techniques that safeguard individual identities while maintaining the data's utility. It is crucial for vendors to be transparent about their data collection, usage, and storage practices to prevent misuse and build trust.</p>
+            <br>
+            <p><b>• Bias mitigation strategies:</b> Inquire about the vendor’s methods for detecting and mitigating bias. Vendors should show ongoing commitment to evaluating and enhancing their models through the use of fairness metrics and regular retraining with new, diverse datasets.</p>
+            <br>
+            <p><b>• Regulatory and ethical compliance:</b>Verify that the vendor complies with industry standards and ethical guidelines, ideally under the supervision of an ethics committee or similar governance structure. This oversight ensures that AI development fosters a safe, productive, and trust-based workplace environment.</p>
+            <br>
+            <p>By rigorously evaluating potential vendors in these areas, CIOs can ensure that the AI solutions they implement not only improve workplace safety but also do so in a fair and ethically responsible way.</p>
+            <h2>3. What is the maximum number of AI models you can implement for each camera and each facility?</h2>
+            <p><b>Why it matters:</b> A frequently overlooked yet dependable indicator of an AI system's effectiveness is its scalability. For instance, a technology that enables a single camera to simultaneously identify various types of hazards within its field of view—such as PPE non-compliance, vehicle-pedestrian interactions, and unauthorized area access—will be more cost-effective and easier to manage than relying on multiple separate systems.</p>
+            <br>
+            <p>Scalability also requires evaluating bandwidth implications to maintain responsiveness as additional functions, use cases, or variables are introduced. The solution's capability to adapt and integrate multiple AI models without sacrificing performance is crucial for ensuring continuous visibility into the complete range of hazards that your workplace may face.</p>
+            <h2>4. How do you confirm the accuracy of the system post-deployment?</h2>
+            <p><b>Why it matters:</b>  Initial testing and ongoing validation of accuracy are essential for the successful implementation and operation of any computer vision AI-driven solution. During the rollout phase, it’s common for inaccuracies to arise as the AI models adapt to real-world conditions and learn from their environment.</p>
+            <br>
+            <p> Active user involvement in identifying and resolving these inaccuracies is essential. A vendor that fosters feedback and offers clear mechanisms for reporting issues and verifying accuracy shows a commitment to collaboration and continuous improvement. This cooperative approach aids the system in evolving to meet the actual safety requirements of your workplace.</p>
+            <br>
+            <p>
+                Above all, it's crucial to recognize that selecting the right computer vision AI vendor for your organization and EHS function necessitates a thorough evaluation of not just their technology but also their ethical standards, integrity, and dedication to operational excellence. This choice carries significant implications that cannot be emphasized enough. However, with a detailed and informed approach, CIOs can ensure they find and collaborate with vendors who are not merely service providers but genuine partners in the pursuit of a safer, healthier, and more successful workplace.</p>
+        </div>
+    </div>
+</div>
+<!-- Blog Work Place -->
+
+   <!-- Footer -->
+<footer>
+    <div id="footer-main-container">
+        <div id="footer-second-main-container">
+            <div id="footer-left-container">
+                <div id="footer-left-items">
+                    <div id="footer-left-text"><span id="dot"></span><h6 class="all-h6" style="opacity: 0;">Follow Us</h6></div>
+                    <div id="social-icons-container">
+                        <a href="#">
+                            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/facebook-f.png" alt="facebook-f"/>
+                        </a>
+                        <a href="#">
+                            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/twitterx--v2.png" alt="twitterx--v2"/>
+                        </a>
+                        <a href="#">
+                            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png" alt="instagram-new--v1"/>
+                        </a>
+                        <a href="#">
+                            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/youtube-play.png" alt="youtube-play"/>
+                        </a>
+                        <a href="#">
+                                <img width="50" height="50" src="titkok.png" alt="tiktok--v1"/>
+                            <!-- <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/tiktok--v1.png" alt="tiktok--v1"/> -->
+                        </a>
+                        <a href="#">
+                            <img width="50" height="50" src="Threads.png" alt="threads"/>
+                            <!-- <img width="48" height="48" src="https://img.icons8.com/pulsar-line/48/threads.png" alt="threads"/> -->
+                        </a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div id="footer-mid1-container">
+                <div id="footer-mid1-top">
+                    <div id="footer-left-text"><span id="dot"></span><h6 class="all-h6" style="opacity: 0;">News Letter</h6></div>
+                </div>
+                <div id="footer-mid1-mid">
+                    <form id="email-form">
+                        <input type="email" id="email-input" placeholder="Email Address" required>
+                        <button type="submit" style="display: none;">Submit</button> <!-- Hidden submit button -->
+                    </form>
+                </div>
+                <div id="footer-mid1-bottom">
+                    <p>We require the contact information you provide to reach out regarding our products and services. You can unsubscribe from these communications at any time. For details on how to unsubscribe and to learn more about our privacy practices and our commitment to protecting your information, please refer to our Privacy Policy.</p>
+                </div>
+            </div>
+            <div id="footer-mid2-container">
+                <div id="footer-mid2-ul">
+                <p>Web Design</p>
+                <p>Web Development</p>
+                <p>Product Management</p>
+                <p>Marketing</p>
+                <p>Graphic Design</p>
+                <p>3D Modelling Designing</p>
+                <p>Mobile App Development</p>
+            </div>
+            </div>
+            <div id="footer-right-container">
+                <div id="footer-mid2-ul">
+                    <a >Platform Overview</a>
+                    <a >Core AI</a>
+                    <a >Ergonomics AI</a>
+                    <a >Industrial Integeration</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer  END-->
+
+
+<!-- Last Footer -->
+<div id="last-footer-main-container">
+    <div id="last-footer-top">
+        <div id="last-footer-top-left">
+            <img src="logo-portrait.png" alt="">
+            <button>Contact Us</button>
+        </div>
+        <div id="last-footer-top-right">
+            <h1>Innovating Workplace Safety <br> through Artificial Intelligence</h1>
+        </div>
+    </div>
+    <div id="last-footer-bottom">
+        <div id="last-footer-bottom-left">
+            <p>© 2024 All Rights Reserved</p>
+        </div>
+        <div id="last-footer-bottom-mid">
+            <a href="legal.html">Legal</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <!-- <a >EVK AYDINATAMA</a> -->
+        </div>
+        <div id="last-footer-bottom-right">
+            <a href="#" id="cookie-settings">Cookies Settings</a>
+            <div id="cookie-bar" class="cookie-bar hidden">
+                p>This website stores cookies on your computer. These cookies are used to collect information about how you interact with our website and allow us to remember you. We use this information to improve and customize your browsing experience and for analytics and metrics about our visitors both on this website and other media. To learn more about the cookies we use, see our Privacy Policy.</p>
+                <p>If you decline, your information won’t be tracked when you visit this website. A single cookie will be used in your browser to remember your preference not to be tracked.</p>        
+             <button id="accept">Accept</button>
+             <button id="decline">Decline</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Last Footer END -->
+
+<!-- MESSAGE BOX -->
+
+<div id="sticky-message-box">
+    <img class="message-icon"  src="whatsapp.png"/>
+</div>
+<!-- MESSAGE BOX END-->
+
+
+
+
+ <!-- SCRIPT -->
+ <script src="Blog.js"></script>
+ <script src="script.js"></script>
+
+ <!-- Font Awesome Script -->
+ <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+ 
+
+
+ <!-- BOOTSTRAP SCRIPT -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html>
