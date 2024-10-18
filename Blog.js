@@ -1,4 +1,3 @@
-
 // ALL h6
 document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.all-h6'); 
