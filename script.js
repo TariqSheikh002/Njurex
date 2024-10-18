@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
     // Adjust container height
-    const totalImages = images.length * 5; // Original + clones
+    const totalImages = images.length * 50; // Original + clones
     sliderContainer.style.height = `${totalImages * images[0].height}px`;
 
     let sliderHeight = sliderContainer.offsetHeight;
