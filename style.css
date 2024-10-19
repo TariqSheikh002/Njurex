@@ -3408,7 +3408,8 @@ justify-content: space-around;
     height: 300px;
     transition: filter 0.5s ease-in-out;
     display: block;
-    clip-path: polygon(0 0, 100% 0, 100% 89%, 95% 100%, 6% 100%, 0 89%);
+    border-radius: 0 0px 50px 50px;
+    /* clip-path: polygon(0 0, 100% 0, 100% 89%, 95% 100%, 6% 100%, 0 89%); */
     border: 2px solid #64ab2f;
 }
 
