@@ -108,8 +108,8 @@ body{
     align-items: center; 
 }
 /* #logo {
-    height: 69px;
-    width: 300px;
+    height: 70px;
+    width: 200px;
     margin-left: 50px; 
 } */
 #logo {
@@ -3417,7 +3417,6 @@ justify-content: space-around;
 } 
 #bspecial-img-text-box{
     height: 40%;
-    transition: opacity 0.5s ease-in-out; 
     opacity: 1;
     width: 100%;
     font-size: small;
@@ -3437,11 +3436,9 @@ justify-content: space-around;
     margin-top: 10%;
     margin-left: 20px;
     display: flex;
-    text-align: center;
     color: #000;
     flex-direction: column;
     justify-content: space-around;
-    transition: all 1s;
 }
 
 #bspecial-all-container-mid{
@@ -3456,21 +3453,21 @@ justify-content: space-around;
     height: 50px;
     position: relative;  
     opacity: 0;
-    font-size: small;
+    font-size: smaller;
     display: flex;
     font-weight: 600;
     align-items: center;
     border-bottom: 2px solid #121216;
-    justify-content: center;
     color: #000;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
+    transition: all 1s ease;
 }
 
 #bspecial-all-container-left h5:hover,
 #bspecial-all-container-mid h5:hover {
     border-bottom: 2px solid #1c732c;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 #bspecial-all-container-left h5:hover::before,
 #bspecial-all-container-mid h5:hover::before {
@@ -3479,14 +3476,14 @@ justify-content: space-around;
     position: absolute;
     color: #1c732c;
     font-size: larger;
-    border: 1px solid #1c732c;
+    border: 0.5px solid #1c732c;
     border-radius: 50%;
     width: 20px;
     height: 20px;
     font-size: medium;
     left: 0%;
     opacity: 1;
-    animation: scaleFadeIn 0.3s ease forwards; /* Added animation */
+    animation: scaleFadeIn 0.5s ease forwards;
 }
 
 @keyframes scaleFadeIn {
