@@ -945,3 +945,48 @@ updateNavLink();
 
 window.addEventListener('resize', updateNavLink);
 // Industry Href End
+
+// Enterprise Section images
+const enterprise_images = [
+    "Figma.png", "Flutter.png", "Dart.png", "MySQL.png", "Python.png", "MongoDB.png", 
+    "Js.png", "React.png", "Angular.png", "Nodejs.png", "Rails.png", "PHP.png", 
+    "Swift.png", "Kotlin.png", "Java.png", "Typescript.png", "Tensorflow.png", 
+    "Docker.png", "Redis.png", "GraphQL.png", "PostgreSQL.png", "Firebase.png", 
+    "Jupiter-notebook.png", "Sass.png"
+];
+
+let enterprise_currentIndex = 0;
+
+const enterprise_imgContainer = document.getElementById("enterprise-img-container");
+
+function enterprise_showImages() {
+    // Clear current images
+    enterprise_imgContainer.innerHTML = "";
+
+    // Get the next 6 images to display
+    const enterprise_imagesToShow = enterprise_images.slice(enterprise_currentIndex, enterprise_currentIndex + 6);
+
+    // Create img elements and add them to the container
+    enterprise_imagesToShow.forEach(src => {
+        const enterprise_img = document.createElement("img");
+        enterprise_img.src = src;  // Correct variable name
+        enterprise_img.alt = "";    // Provide a meaningful alt attribute
+        enterprise_imgContainer.appendChild(enterprise_img);  // Correct variable name
+    });
+
+    // Update the current index
+    enterprise_currentIndex += 6;
+
+    // Loop back to the start if we've reached the end of the array
+    if (enterprise_currentIndex >= enterprise_images.length) {
+        enterprise_currentIndex = 0;
+    }
+}
+
+// Initial display
+enterprise_showImages(); // Corrected function call
+
+// Set an interval to change images every 3 seconds (3000 milliseconds)
+setInterval(() => {
+    enterprise_showImages(); // Corrected function call
+}, 2000);

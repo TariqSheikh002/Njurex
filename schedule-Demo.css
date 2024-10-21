@@ -4,9 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-footer{
-    margin-top: -50px;
-}
+
 #schedule-main-container{
     height: 1000px;
     display: flex;
