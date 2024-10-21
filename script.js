@@ -553,7 +553,6 @@ document.querySelectorAll('.special-faq-item').forEach(item => {
 
 
 // BSPECIAL SLIDE
-
 const slides = document.querySelectorAll('.bslide');
 const textBox = document.getElementById('bspecial-img-text-box');
 const textItems = document.querySelectorAll('#bspecial-all-container-left h5, #bspecial-all-container-mid h5');
@@ -568,14 +567,14 @@ function changeSlide(index) {
         slides[currentIndex].classList.remove('active');
         currentIndex = index;
         slides[currentIndex].classList.add('active');
-        
+
         const newSlide = slides[currentIndex].querySelector('img');
         newSlide.classList.remove('blur');
 
         const newText = textItems[index].getAttribute('data-text');
         textBox.innerText = newText;
         textBox.classList.remove('fade-out');
-    }, 100); 
+    }, 500); // Match this duration to your CSS transition duration
 }
 
 function initializeSlides() {

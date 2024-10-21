@@ -2379,7 +2379,7 @@ justify-content: space-around;
 }
 #harness-points p{
     color: white;
-    font-size: small;
+    font-size: medium;
 }
 #harness-right{
     height: 100%;
@@ -2821,8 +2821,8 @@ justify-content: space-around;
 }
 
 .ehs-card {
-    flex: 0 0 330px;
-    height: 400px; 
+    flex: 0 0 250px;
+    height: 300px; 
     background: white;
     display: flex;
     flex-direction: column;
@@ -2937,8 +2937,8 @@ justify-content: space-around;
 }
 
 .ehs-small-card {
-    height: 400px;
-    width: 250px;
+    height: 300px;
+    width: 200px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -3315,7 +3315,7 @@ justify-content: space-around;
 
 /* Special BEFORE 991PX */
 #b-special-main-container{
-    height: 700px;
+    height: 600px;
     width: 100%;
     display: flex;
     overflow-y: hidden;
@@ -3404,8 +3404,8 @@ justify-content: space-around;
     opacity: 1; 
 }
 .bslide img {
-    width: 100%;
-    height: 300px;
+    width: 90%;
+    height: 200px;
     transition: filter 0.5s ease-in-out;
     display: block;
     border-radius: 0 0px 50px 50px;
@@ -3419,6 +3419,8 @@ justify-content: space-around;
 #bspecial-img-text-box{
     height: 40%;
     opacity: 1;
+    position: relative;
+    bottom: 40px;
     width: 100%;
     font-size: small;
 }
@@ -3439,12 +3441,14 @@ justify-content: space-around;
     display: flex;
     color: #000;
     flex-direction: column;
+    position: relative;
+    bottom: 50px;
     justify-content: space-around;
 }
 
 #bspecial-all-container-mid{
     position: relative;
-    bottom: 01px;
+    bottom: 50.1px;
     left: 20px;
 }
 #bspecial-all-container-left h5,
@@ -3454,7 +3458,7 @@ justify-content: space-around;
     height: 50px;
     position: relative;  
     opacity: 0;
-    font-size: smaller;
+    font-size: medium;
     display: flex;
     font-weight: 600;
     align-items: center;
@@ -4166,8 +4170,8 @@ justify-content: space-around;
     bottom: 3px;
 }
 #numbers-card{
-    height: 100%;
-    width: 45%;
+    height: 70%;
+    width: 40%;
     border-left: 2px solid #1c732c;
     border-radius: 0 0 0 20px;
     display: flex;
