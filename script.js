@@ -285,9 +285,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const clone = image.cloneNode(true);
         sliderContainer.appendChild(clone);
     });
-    
-    // Adjust container height
-    const totalImages = images.length * 500; // Original + clones
+
+    // Adjust container height based on the number of images
+    const totalImages = images.length * 2; // Original + clones
     sliderContainer.style.height = `${totalImages * images[0].height}px`;
 
     let sliderHeight = sliderContainer.offsetHeight;
