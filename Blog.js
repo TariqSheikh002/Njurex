@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // CHAT  IN WHATSAPP
 
 function openWhatsAppChat() {
-    const phoneNumber = '+92312345678'; 
+    const phoneNumber = '03032963506'; 
+
     const message = 'Hi, Thanks for Contacting Us.';
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // CHAT  IN WHATSAPP
 
 function openWhatsAppChat() {
-    const phoneNumber = '+92312345678'; 
+    const phoneNumber = '03032963506'; 
+
     const message = 'Hi, Thanks for Contacting Us.';
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -199,3 +200,41 @@ document.addEventListener('click', function(event) {
     }
 });
 // RESOURCE DROP DOWN END
+
+
+
+// ALL h6
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.all-h6'); 
+
+    const typewriterEffect = (element, text) => {
+        element.textContent = ''; 
+        let index = 0; 
+
+        const type = () => {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 100); 
+            }
+        };
+
+        type(); 
+    };
+
+    const handleScroll = () => {
+        elements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+
+            if (rect.top < window.innerHeight && rect.bottom > 0 && element.style.opacity === '0') {
+                element.style.opacity = '1';
+                typewriterEffect(element, element.textContent); 
+                element.style.opacity = '1'; 
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+});
+
+// All H6 End
