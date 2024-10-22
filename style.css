@@ -1677,14 +1677,19 @@ body{
 }
 
 .card-front img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     transition: opacity 0.3s; 
 }
 
 .card-front:hover img {
     opacity: 0; 
 }
+#logo2{
+    height: 120px;
+    width: 120px;
+}
+
 
 /* Footer */
 #about-footer-container {
