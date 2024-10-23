@@ -821,5 +821,268 @@
         padding-left: 2px;
         border-radius: 50%;
     }
-    
+}
+
+/* Medical Product Cards */
+#medical-product-main-container{
+    height: fit-content;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #121216;
+    justify-content: center;
+    align-items: center;
+}
+#medical-product-secont-container{
+    height: fit-content;
+    width: 80%;
+     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#medical-card-container {
+    height: 350px;
+    width: 80%;
+    overflow: hidden;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative; 
+}
+
+#medical-card-left {
+    height: 100%;
+    width: 45%;
+}
+
+#medical-card-left img {
+    height: 100%;
+    width: 100%;
+}
+
+#medical-card-right {
+    height: 100%;
+    width: 55%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid gray;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#ellipsis-menu {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+#ellipsis-menu:hover{
+    color: #1c732c;
+}
+#dateTime{
+    font-size: small;
+    color: #333;
+}
+#sub-heading{
+    color: #1c732c;
+    font-size: medium;
+
+}
+#medical-card-right h1{
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+#medical-card-right h1:hover{
+    color: #1c732c;
+}
+#M-card-discription{
+    font-size: medium;
+    color: #333;
+}
+#load-more-btn {
+    font-size: medium;
+    height: 45px;
+    margin-top: 50px;
+    width: 160px;
+    color: #ffffff;
+    font-weight: 900;
+    background-color: #333;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px; 
+}
+
+#load-more-btn:hover {
+    background-image: linear-gradient(to right,#1c732c,#4b9533); 
+    border-color: #64ab2f;
+    box-shadow: 0 0 8px #1c732c;
+}
+
+
+
+
+#extra-cards{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+#extra-cards #medical-card-container{
+    height: 350px;
+    width: 100%;
+}
+@media (max-width: 992px){
+    #medical-card-container {
+        height: 280px;
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative; 
+    }
+    #extra-cards{
+        width: 95%;
+        height: fit-content;
+    }
+    #extra-cards #medical-card-container{
+        width: 100%;
+        height: 280px;
+    }
+    #medical-card-right h1{
+        font-size: 25px;
+    }
+    #M-card-discription{
+        font-size: small;
+    }
+} 
+@media (max-width: 768px){
+    #medical-product-secont-container{
+        width: 85%;
+    }
+    #extra-cards{
+        width: 100%;
+        position: relative;
+        left: 16px;
+    }
+    #medical-card-container {
+        height: 280px;
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative; 
+    }
+    #extra-cards #medical-card-container{
+        height: 280px;
+        width: 95%;
+    }
+    #medical-card-right h1{
+        font-size: 23px;
+    }
+    #M-card-discription{
+        font-size: small;
+    }
+    #sub-heading{
+        font-size: 0.99rem;
+    }
+}
+@media (max-width: 600px){
+#medical-product-secont-container{
+    width: 95%;
+}
+#extra-cards{
+    width: 100%;
+    left: 0px;
+
+}
+    #medical-card-container {
+        height: 200px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative; 
+    }
+    #extra-cards #medical-card-container{
+        height: 200px;
+        width: 100%;
+    }
+    #medical-card-right h1{
+        font-size: 15px;
+    }
+    #M-card-discription{
+        font-size: x-small;
+    }
+    #sub-heading{
+        font-size:small;
+    }
+    #ellipsis-menu {
+        font-size: 15px;
+    }
+}
+@media (max-width: 600px){
+    #medical-product-secont-container{
+        width: 95%;
+    }
+        #medical-card-container {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            position: relative; 
+        }
+        #extra-cards{
+            width: 100%;
+        }
+        #extra-cards #medical-card-container{
+            height: 200px;
+            width: 100%;
+        }
+        #medical-card-right h1{
+            font-size: 15px;
+        }
+        #M-card-discription{
+            font-size: xx-small;
+        }
+        #sub-heading{
+            font-size:small;
+        }
+        #ellipsis-menu {
+            font-size: 15px;
+        }
+}
+#medical-dropdown-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    justify-content: right;
+    padding-right: 20px;
+    bottom: 30px;
+    align-items: center; 
+}
+
+#medical-dropdown-container select {
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #121216; 
+    color: white;
+    border: 0.2px solid gray;
+    text-align: center; 
+    font-size: small;
+    transition: background-color 0.3s ease;
 }

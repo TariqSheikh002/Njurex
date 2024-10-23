@@ -243,3 +243,62 @@ updateNavLink();
 
 window.addEventListener('resize', updateNavLink);
 // Industry Href End
+
+
+// Hidden Cards 
+document.getElementById("load-more-btn").addEventListener("click", function() {
+    const extraCards = document.getElementById("extra-cards");
+    if (extraCards.style.display === "none") {
+        extraCards.style.display = "flex"; // Show extra cards
+        this.style.display = "none"; // Hide the Load More button after clicking
+    }
+});
+
+
+
+// Dropdown option
+// JavaScript code to filter cards based on dropdown selection
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdown = document.querySelector('#medical-dropdown-container select');
+    const medicalCards = document.querySelectorAll('#medical-card-container');
+    
+    // Add data attributes for filtering
+    medicalCards[0].setAttribute('data-category', 'Software');
+    medicalCards[1].setAttribute('data-category', 'embedded hardware');
+    medicalCards[2].setAttribute('data-category', 'embedded hardware');
+    medicalCards[3].setAttribute('data-category', 'Software');
+    // For the hidden cards, add their categories as well
+    document.querySelectorAll('#extra-cards #medical-card-container').forEach((card, index) => {
+        if(index === 0 || index === 3) {
+            card.setAttribute('data-category', 'Software');
+        } else {
+            card.setAttribute('data-category', 'embedded hardware');
+        }
+    });
+
+    // Event listener for dropdown change
+    dropdown.addEventListener('change', (event) => {
+        const selectedCategory = event.target.value;
+        
+        // Show or hide cards based on the selection
+        medicalCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (selectedCategory === 'All' || cardCategory === selectedCategory) {
+                card.style.display = 'flex'; // Show matching card
+            } else {
+                card.style.display = 'none'; // Hide non-matching card
+            }
+        });
+    });
+
+    // "Load More" button functionality
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const extraCards = document.getElementById('extra-cards');
+
+    loadMoreBtn.addEventListener('click', () => {
+        extraCards.style.display = 'block';
+        loadMoreBtn.style.display = 'none';
+    });
+});
