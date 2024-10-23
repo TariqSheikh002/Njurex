@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 #medical-header-main-container {
     height: 550px;
     width: 100%;
@@ -13,7 +12,6 @@
     background-size: cover;
     background-attachment: fixed; 
 }
-
 #medical-header-main-container h1 {
     font-size: 50px;
     color: white;
@@ -25,14 +23,12 @@
     position: relative;
     z-index: 2; 
 }
-
 /* Responsive text size */
 @media (max-width: 991px) {
     #medical-header-main-container {
         height: 450px;
         width: 100%;
     }
-    
     #medical-header-main-container h1 {
         font-size: 40px; 
     }
@@ -42,7 +38,6 @@
         height: 400px;
         width: 100%;
     }
-    
     #medical-header-main-container h1 {
         font-size: 35px;
     }
@@ -55,15 +50,12 @@
 @media (max-width: 399px) {
     #medical-header-main-container {
         height: 350px;
-    }
-    
+    }   
     #medical-header-main-container h1 {
         width: 90%;
         font-size: 25px;
     }
 }
-
-
 /* Second PorTion */
 #second-portion {
     position: relative;
@@ -74,7 +66,6 @@
     flex-direction: row;
     overflow: hidden; 
 }
-
 #second-portion::before {
     content: '';
     position: absolute;
@@ -88,7 +79,6 @@
     opacity: 0.5; 
     z-index: 1; 
 }
-
 #second-portion > * {
     position: relative; 
     z-index: 2; 
@@ -100,7 +90,6 @@
     align-items: center;
     justify-content: center;
 }
-
 #second-portion-left img{
     height: 400px;
     width: 400px;
@@ -270,7 +259,6 @@
         font-size: x-small;
     }
 }
-
 /* Third Portion */
 #third-portion{
     height: 500px;
@@ -336,7 +324,6 @@
     position: relative;
     padding-left: 30px; 
 }
-
 #third-portion-all-Text-container-left p::before ,#third-portion-all-Text-container-right p::before{
     content: '✓';
     font-size: large; 
@@ -358,7 +345,6 @@
     font-weight: 100;
     color: white;
 }
-
 #third-portion-right button{
     width: 200px;
     height: 45px;
@@ -425,19 +411,16 @@
         font-size: large;
         padding: 0;
     }
-    
     #third-portion-all-Text-container-left span ,#third-portion-all-Text-container-right span{
         font-size: x-small;
     }
-    
-#third-portion-right button{
-    width: 200px;
-    height: 40px;
-    font-size: medium;
-    left: 40%;
-    bottom: 10px;
-}
-    
+    #third-portion-right button{
+        width: 200px;
+        height: 40px;
+        font-size: medium;
+        left: 40%;
+        bottom: 10px;
+    }
 }
 @media (max-width: 768px) {
     #third-portion {
@@ -446,29 +429,24 @@
         justify-content: center;
         padding: 20px; 
     }
-    
     #third-portion-left {
         width: 100%; 
         height: auto;
     }
-    
     #third-portion-right {
         width: 100%; 
         height: auto;
         flex-direction: column;
         justify-content: space-between;
     }
-    
     #third-portion-right h1 {
         font-size: 24px;
         text-align: center;
     }
-    
     #third-portion-right p {
         font-size: x-small;
         text-align: center;
     }
-    
     #third-portion-all-Text-container {
         height: auto;
         position: relative;
@@ -477,7 +455,6 @@
         width: 100%;
         padding: 10px;
     }
-    
     #third-portion-all-Text-container-left, 
     #third-portion-all-Text-container-right {
         width: 100%; 
@@ -486,19 +463,16 @@
         justify-content: center;
         padding: 10px; 
     }
-    
     #third-portion-all-Text-container-left p, 
     #third-portion-all-Text-container-right p {
         font-size: medium;
         padding: 0; 
         text-align: center; 
     }
-    
     #third-portion-all-Text-container-left span, 
     #third-portion-all-Text-container-right span {
         font-size: x-small; 
     }
-    
     #third-portion-right button {
         width: 200px; 
         height: 40px;
@@ -514,29 +488,24 @@
         justify-content: center;
         padding: 10px;
     }
-    
     #third-portion-left {
         width: 100%; 
         height: auto; 
     }
-    
     #third-portion-right {
         width: 100%; 
         height: auto; 
         flex-direction: column;
         justify-content: space-between;
     }
-    
     #third-portion-right h1 {
         font-size: 20px; 
         text-align: center;
     }
-    
     #third-portion-right p {
         font-size: xx-small; 
         text-align: center;
     }
-    
     #third-portion-all-Text-container {
         height: auto; 
         position: relative;
@@ -545,7 +514,6 @@
         width: 100%; 
         padding: 5px;
     }
-    
     #third-portion-all-Text-container-left, 
     #third-portion-all-Text-container-right {
         width: 100%; 
@@ -554,19 +522,16 @@
         justify-content: center;
         padding: 5px; 
     }
-    
     #third-portion-all-Text-container-left p, 
     #third-portion-all-Text-container-right p {
         font-size: small; 
         padding: 0; 
         text-align: center; 
     }
-    
     #third-portion-all-Text-container-left span, 
     #third-portion-all-Text-container-right span {
         font-size: 0.5rem; 
     }
-    
     #third-portion-right button {
         width: 170px; 
         height: 35px; 
@@ -581,29 +546,24 @@
         justify-content: center;
         padding: 10px; 
     }
-    
     #third-portion-left {
         width: 100%;
         height: auto; 
     }
-    
     #third-portion-right {
         width: 100%; 
         height: auto; 
         flex-direction: column;
         justify-content: space-between;
     }
-    
     #third-portion-right h1 {
         font-size: 18px;
         text-align: center;
     }
-    
     #third-portion-right p {
         font-size: 0.4rem; 
         text-align: center;
     }
-    
     #third-portion-all-Text-container {
         height: auto; 
         position: relative;
@@ -612,7 +572,6 @@
         width: 100%; 
         padding: 5px; 
     }
-    
     #third-portion-all-Text-container-left, 
     #third-portion-all-Text-container-right {
         width: 100%; 
@@ -621,7 +580,6 @@
         justify-content: center;
         padding: 5px; 
     }
-    
     #third-portion-all-Text-container-left p, 
     #third-portion-all-Text-container-right p {
         font-size: x-small; 
@@ -645,8 +603,7 @@
     #third-portion-all-Text-container-left span, 
     #third-portion-all-Text-container-right span {
         font-size: 0.4rem; 
-    }
-    
+    }   
     #third-portion-right button {
         width: 150px;
         height: 35px; 
@@ -654,8 +611,6 @@
         left: 25%;
     }
 }
-
-
 /* Fourth Portion */
 #fourth-portion {
     position: relative;
@@ -665,7 +620,6 @@
     align-items: center;
     width: 100%;
 }
-
 #fourth-portion::before {
     content: '';
     position: absolute;
@@ -678,12 +632,10 @@
     opacity: 0.2; 
     z-index: 1; 
 }
-
 #fourth-portion > * {
     position: relative;
     z-index: 2; 
 }
-
 #fourth-second-portion {
     height: 90%;
     width: 90%;
@@ -694,26 +646,22 @@
     justify-content: space-around;
     text-align: left;
 }
-
 #fourth-second-portion h1 {
     font-size: 40px;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: #1c732c;
 }
-
 #fourth-second-portion p {
     font-size: medium;
     color: #000;
 }
-
 #fourth-second-portion span {
     font-size: medium;
     color: #000;
     position: relative;
     padding-left: 30px;
 }
-
 #fourth-second-portion span::before {
     content: '✔'; 
     background-color: #1c732c; 
@@ -727,7 +675,6 @@
     padding-left: 3px;
     border-radius: 50%;
 }
-
 #fourth-second-portion span:hover {
     color: #1c732c;
 }
@@ -745,10 +692,8 @@
         font-size: x-small;
         padding-left: 3px;
         border-radius: 50%;
-    }
-    
+    }   
 }
-
 @media (max-width: 768px) {
     #fourth-portion {
         height: 650px; 
@@ -769,11 +714,8 @@
         font-size: x-small;
         padding-left: 3px;
         border-radius: 50%;
-    }
-    
-    
+    }   
 }
-
 @media (max-width: 600px) {
     #fourth-portion {
         height: 500px; 
@@ -798,7 +740,6 @@
     }
     
 }
-
 @media (max-width: 399px) {
     #fourth-portion {
         height: 550px; 
@@ -822,7 +763,6 @@
         border-radius: 50%;
     }
 }
-
 /* Medical Product Cards */
 #medical-product-main-container{
     height: fit-content;
@@ -853,17 +793,14 @@
     justify-content: space-around;
     position: relative; 
 }
-
 #medical-card-left {
     height: 100%;
     width: 45%;
 }
-
 #medical-card-left img {
     height: 100%;
     width: 100%;
 }
-
 #medical-card-right {
     height: 100%;
     width: 55%; 
@@ -874,7 +811,6 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-
 #ellipsis-menu {
     position: absolute;
     top: 10px; 
@@ -893,7 +829,6 @@
 #sub-heading{
     color: #1c732c;
     font-size: medium;
-
 }
 #medical-card-right h1{
     font-size: 28px;
@@ -924,16 +859,11 @@
     justify-content: center;
     letter-spacing: 0.5px; 
 }
-
 #load-more-btn:hover {
     background-image: linear-gradient(to right,#1c732c,#4b9533); 
     border-color: #64ab2f;
     box-shadow: 0 0 8px #1c732c;
 }
-
-
-
-
 #extra-cards{
     width: 80%;
     display: flex;
@@ -1000,14 +930,13 @@
     }
 }
 @media (max-width: 600px){
-#medical-product-secont-container{
-    width: 95%;
-}
-#extra-cards{
-    width: 100%;
-    left: 0px;
-
-}
+    #medical-product-secont-container{
+        width: 95%;
+    }
+    #extra-cards{
+        width: 100%;
+        left: 0px;
+    }
     #medical-card-container {
         height: 200px;
         width: 100%;
@@ -1037,33 +966,33 @@
     #medical-product-secont-container{
         width: 95%;
     }
-        #medical-card-container {
-            height: 200px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            position: relative; 
-        }
-        #extra-cards{
-            width: 100%;
-        }
-        #extra-cards #medical-card-container{
-            height: 200px;
-            width: 100%;
-        }
-        #medical-card-right h1{
-            font-size: 15px;
-        }
-        #M-card-discription{
-            font-size: xx-small;
-        }
-        #sub-heading{
-            font-size:small;
-        }
-        #ellipsis-menu {
-            font-size: 15px;
-        }
+    #medical-card-container {
+        height: 200px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative; 
+    }
+    #extra-cards{
+        width: 100%;
+    }
+    #extra-cards #medical-card-container{
+        height: 200px;
+        width: 100%;
+    }
+    #medical-card-right h1{
+        font-size: 15px;
+    }
+    #M-card-discription{
+        font-size: xx-small;
+    }
+    #sub-heading{
+        font-size:small;
+    }
+    #ellipsis-menu {
+        font-size: 15px;
+    }
 }
 #medical-dropdown-container {
     display: flex;
@@ -1085,4 +1014,9 @@
     text-align: center; 
     font-size: small;
     transition: background-color 0.3s ease;
+}
+@media (max-width: 600px){
+#medical-dropdown-container select {
+    font-size: x-small;
+}
 }
