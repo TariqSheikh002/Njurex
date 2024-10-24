@@ -229,76 +229,66 @@ document.addEventListener('click', function(event) {
 
 
 
-// Industry Href
-function updateNavLink() {
-    const navLink = document.getElementById('industry-first-nav-item');
-    if (window.innerWidth < 992) {
-        navLink.href = "#specialization-second-container"; 
-    } else {
-        navLink.href = "#b-special-second-container"; 
-    }
-}
 
-updateNavLink();
+// Li Active State
+document.querySelectorAll('#medical-card-second-container-left ul li').forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove active class from all items
+        document.querySelectorAll('#medical-card-second-container-left ul li').forEach(li => {
+            li.classList.remove('active');
+        });
+        // Add active class to the clicked item
+        this.classList.add('active');
+    });
 
-window.addEventListener('resize', updateNavLink);
-// Industry Href End
+    // Prevent hover effect if the item is active
+    item.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('active')) {
+            this.classList.add('hover');
+        }
+    });
 
-
-// Hidden Cards 
-document.getElementById("load-more-btn").addEventListener("click", function() {
-    const extraCards = document.getElementById("extra-cards");
-    if (extraCards.style.display === "none") {
-        extraCards.style.display = "flex"; // Show extra cards
-        this.style.display = "none"; // Hide the Load More button after clicking
-    }
+    item.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+            this.classList.remove('hover');
+        }
+    });
 });
 
 
 
-// Dropdown option
-// JavaScript code to filter cards based on dropdown selection
 
+// CARD Load More
 document.addEventListener('DOMContentLoaded', () => {
-    const dropdown = document.querySelector('#medical-dropdown-container select');
-    const medicalCards = document.querySelectorAll('#medical-card-container');
-    
-    // Add data attributes for filtering
-    medicalCards[0].setAttribute('data-category', 'Software');
-    medicalCards[1].setAttribute('data-category', 'embedded hardware');
-    medicalCards[2].setAttribute('data-category', 'embedded hardware');
-    medicalCards[3].setAttribute('data-category', 'Software');
-    // For the hidden cards, add their categories as well
-    document.querySelectorAll('#extra-cards #medical-card-container').forEach((card, index) => {
-        if(index === 0 || index === 3) {
-            card.setAttribute('data-category', 'Software');
-        } else {
-            card.setAttribute('data-category', 'embedded hardware');
-        }
-    });
+    const loadMoreButton = document.querySelector('#medical-card-second-container-right button');
+    const hiddenCardContainer = document.querySelector('#hidden-card-container');
 
-    // Event listener for dropdown change
-    dropdown.addEventListener('change', (event) => {
-        const selectedCategory = event.target.value;
-        
-        // Show or hide cards based on the selection
-        medicalCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            
-            if (selectedCategory === 'All' || cardCategory === selectedCategory) {
-                card.style.display = 'flex'; // Show matching card
-            } else {
-                card.style.display = 'none'; // Hide non-matching card
-            }
+    loadMoreButton.addEventListener('click', () => {
+        hiddenCardContainer.style.display = 'block'; // Show the hidden container
+        loadMoreButton.style.display = 'none'; // Hide the button
+    });
+});
+
+
+
+// Card Filteration
+document.addEventListener('DOMContentLoaded', function () {
+    const filterItems = document.querySelectorAll('#medical-card-second-container-left li');
+    const cards = document.querySelectorAll('#medical-card-containment');
+
+    filterItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const selectedCategory = this.textContent.toLowerCase();
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+
+                if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                    card.style.display = 'flex'; // Change to flex
+                } else {
+                    card.style.display = 'none'; // Keep hidden
+                }
+            });
         });
-    });
-
-    // "Load More" button functionality
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const extraCards = document.getElementById('extra-cards');
-
-    loadMoreBtn.addEventListener('click', () => {
-        extraCards.style.display = 'block';
-        loadMoreBtn.style.display = 'none';
     });
 });
