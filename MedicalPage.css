@@ -20,9 +20,26 @@
     font-weight: 600;
     top: 40%;
     left: 5%;
-    position: relative;
     z-index: 2; 
+    background: linear-gradient(45deg, #807f7f, #ffffff, #babbbb, #dbd9d9, #ffffff);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s ease-in-out infinite;
 }
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 /* Responsive text size */
 @media (max-width: 991px) {
     #medical-header-main-container {
