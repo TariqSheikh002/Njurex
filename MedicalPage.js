@@ -233,21 +233,16 @@ document.addEventListener('click', function(event) {
 // Li Active State
 document.querySelectorAll('#medical-card-second-container-left ul li').forEach(item => {
     item.addEventListener('click', function() {
-        // Remove active class from all items
         document.querySelectorAll('#medical-card-second-container-left ul li').forEach(li => {
             li.classList.remove('active');
         });
-        // Add active class to the clicked item
         this.classList.add('active');
     });
-
-    // Prevent hover effect if the item is active
     item.addEventListener('mouseenter', function() {
         if (!this.classList.contains('active')) {
             this.classList.add('hover');
         }
     });
-
     item.addEventListener('mouseleave', function() {
         if (!this.classList.contains('active')) {
             this.classList.remove('hover');
@@ -262,10 +257,9 @@ document.querySelectorAll('#medical-card-second-container-left ul li').forEach(i
 document.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.querySelector('#medical-card-second-container-right button');
     const hiddenCardContainer = document.querySelector('#hidden-card-container');
-
     loadMoreButton.addEventListener('click', () => {
-        hiddenCardContainer.style.display = 'block'; // Show the hidden container
-        loadMoreButton.style.display = 'none'; // Hide the button
+        hiddenCardContainer.style.display = 'block';
+        loadMoreButton.style.display = 'none'; 
     });
 });
 
@@ -275,20 +269,40 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
     const filterItems = document.querySelectorAll('#medical-card-second-container-left li');
     const cards = document.querySelectorAll('#medical-card-containment');
-
     filterItems.forEach(item => {
         item.addEventListener('click', function () {
             const selectedCategory = this.textContent.toLowerCase();
-
             cards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
-
                 if (selectedCategory === 'all' || cardCategory === selectedCategory) {
-                    card.style.display = 'flex'; // Change to flex
+                    card.style.display = 'flex';
                 } else {
-                    card.style.display = 'none'; // Keep hidden
+                    card.style.display = 'none'; 
                 }
             });
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.onload = function() {
+    const letters = document.querySelectorAll('#medical-header-main-container h1 span');
+    letters.forEach((letter, index) => {
+        setTimeout(() => {
+            letter.style.opacity = 1; // Fade in
+            letter.style.transform = 'translateX(0)'; // Move to original position
+        }, index * 100); // Stagger each letter's animation
+    });
+};

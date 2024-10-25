@@ -7,58 +7,40 @@
     position: relative;
     height: 550px;
     width: 100%;
-    background-image: url(MedicalPage.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: last baseline;
     overflow: hidden;
 }
-
-#medical-header-main-container::before {
-    content: "";
+#medical-header-img-container{
+    height: 80%;
+    width: 40%;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
-    z-index: 1; 
+    right: 0;
 }
-
-#medical-header-main-container * {
-    position: relative;
-    z-index: 2; /* Ensure content is above the overlay */
+#medical-header-img-container img{
+    height: 100%;
+    width: 100%;
 }
 
 #medical-header-main-container h1 {
     font-size: 50px;
-    color: rgb(255, 255, 255);
     position: absolute;
-    width: 70%;
+    width: 60%;
     font-weight: 600;
-    top: 50%;
+    top: 30%;
     left: 5%;
-    z-index: 2; 
-    background: linear-gradient(90deg, #fffdfd, #ffffff, #babbbb, #dbd9d9, #ffffff);
-    background-size: 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-animation 3s ease-in-out infinite;
+    z-index: 2;
+    color: #000;
 }
 
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+#medical-header-main-container h1 span {
+    display: inline-block; /* Allows individual animation */
+    opacity: 0; /* Start hidden */
+    transform: translateX(-30px); /* Start slightly off-screen */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
 }
-
 /* Responsive text size */
 @media (max-width: 991px) {
     #medical-header-main-container {
@@ -66,7 +48,14 @@
         width: 100%;
     }
     #medical-header-main-container h1 {
-        font-size: 40px; 
+        font-size: 35px; 
+        width: 50%;
+    }
+    #medical-header-img-container{
+        height: 80%;
+        width: 60%;
+        position: absolute;
+        right: 0;
     }
 }
 @media (max-width: 768px) {
@@ -75,12 +64,27 @@
         width: 100%;
     }
     #medical-header-main-container h1 {
-        font-size: 35px;
+        font-size: 30px;
+        width: 70%;
+    }
+    #medical-header-img-container{
+        height: 80%;
+        width: 70%;
+        position: absolute;
+        right: 0;
     }
 }
 @media (max-width: 600px) {
     #medical-header-main-container h1 {
-        font-size: 30px; 
+        font-size: 25px;
+        width: 80%; 
+        top: 40%;
+    }
+    #medical-header-img-container{
+        height: 70%;
+        width: 80%;
+        position: absolute;
+        right: 0;
     }
 }
 @media (max-width: 399px) {
@@ -88,8 +92,14 @@
         height: 350px;
     }   
     #medical-header-main-container h1 {
-        width: 90%;
-        font-size: 25px;
+        font-size: 20px;
+        width: 70%;
+    }
+    #medical-header-img-container{
+        height: 70%;
+        width: 70%;
+        position: absolute;
+        right: 0;
     }
 }
 /* Second PorTion */
@@ -212,7 +222,7 @@
         width: 100%;
     }
     #second-portion-right h1{
-        font-size: 45px;
+        font-size: 40px;
         text-align: center;
     }
     #second-portion-right p{
@@ -246,7 +256,7 @@
         width: 100%;
     }
     #second-portion-right h1{
-        font-size: 40px;
+        font-size: 35px;
         text-align: center;
     }
     #second-portion-right p{
@@ -280,7 +290,7 @@
         width: 100%;
     }
     #second-portion-right h1{
-        font-size: 35px;
+        font-size: 30px;
         text-align: center;
     }
     #second-portion-right p{
