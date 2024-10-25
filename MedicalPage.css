@@ -4,24 +4,43 @@
     box-sizing: border-box;
 }
 #medical-header-main-container {
+    position: relative;
     height: 550px;
     width: 100%;
     background-image: url(MedicalPage.jpg);
-    background-repeat: no-repeat; 
-    background-position: center; 
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    background-attachment: fixed; 
+    background-attachment: fixed;
+    overflow: hidden;
 }
+
+#medical-header-main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+#medical-header-main-container * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
 #medical-header-main-container h1 {
     font-size: 50px;
-    color: white;
+    color: rgb(141, 138, 138);
     position: absolute;
     width: 70%;
     font-weight: 600;
     top: 20%;
     left: 5%;
     z-index: 2; 
-    background: linear-gradient(45deg, #807f7f, #ffffff, #babbbb, #dbd9d9, #ffffff);
+    background: linear-gradient(90deg, #fffdfd, #ffffff, #babbbb, #dbd9d9, #ffffff);
     background-size: 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
