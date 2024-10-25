@@ -776,8 +776,8 @@ body{
 }
 #section1-button:hover{
     background-image: linear-gradient(to right,#1c732c,#4b9533); 
-    border-color: #64ab2f;
-    box-shadow: 0 0 8px #1c732c;
+    /* border-color: #64ab2f; */
+    /* box-shadow: 0 0 8px #1c732c; */
 }
 /* End */
 
@@ -3196,6 +3196,12 @@ justify-content: space-around;
     overflow: hidden;
     margin: 0 auto; 
 }
+.special-faq-button a{
+    text-decoration: none;
+    font-size: medium;
+    color: #ffffff;
+    font-weight: 900;
+}
 .special-faq-button:hover{
     background-color: #64ab2f;
     transform: scale(1.05); 
@@ -3249,7 +3255,7 @@ justify-content: space-around;
     .special-faq-icon{
         font-size: 18px; 
     }
-    .special-faq-button{
+    .special-faq-button a{
         font-size: medium; 
     }
     .special-faq-answer p{
@@ -3277,9 +3283,14 @@ justify-content: space-around;
         font-size: 16px; 
     }
     .special-faq-button{
-        font-size: small;
         height: 40px;
         width: 150px; 
+    }
+    .special-faq-button{
+        font-size: small;
+    }
+    .special-faq-button{
+        font-size: small; 
     }
     #special-text h6{
         margin-top: 10px;
@@ -3307,7 +3318,10 @@ justify-content: space-around;
     .special-faq-button{
         height: 30px;
         width: 120px;
+    }
+    .special-faq-button{
         font-size: x-small; 
+        
     }
     #special-text h6{
         margin-top: 9px;
