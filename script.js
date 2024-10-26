@@ -315,73 +315,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // EHS HEROES LARGE SCREEN 
-
-const cards = document.querySelectorAll('.ehs-card');
-const slider = document.querySelector('.card-slider');
-const nextArrow = document.querySelector('.next-arrow');
-
-const totalCards = cards.length;
-const gap = 20;
-const cardWidth = 330; 
-
-
-for (let i = 0; i < 3; i++) {
-    cards.forEach((card) => {
-        const cloneEnd = card.cloneNode(true);
-        const cloneStart = card.cloneNode(true);
-        slider.appendChild(cloneEnd); 
-        slider.insertBefore(cloneStart, slider.firstChild);
-    });
-}
-
-const updatedCards = document.querySelectorAll('.ehs-card');
-let currentnum = totalCards * 3; 
-
-slider.style.transform = `translateX(-${(cardWidth + gap) * currentnum}px)`;
-
-function updateText(index) {
-    const realIndex = (index - totalCards * 3) % totalCards; 
-    const card = cards[realIndex];
-    const name = card.getAttribute('data-name');
-    const description = card.getAttribute('data-description');
-
-    document.getElementById('ehs-name').innerText = name;
-    document.getElementById('ehs-description').innerText = description;
-}
-
-function moveSlider() {
-    slider.style.transition = 'transform 0.5s ease';
-    slider.style.transform = `translateX(-${(cardWidth + gap) * currentnum}px)`;
-}
-
-function resetSliderPosition() {
-    slider.style.transition = 'none'; 
-    if (currentnum >= totalCards * 6) {
-        currentnum = totalCards * 3;
-        slider.style.transform = `translateX(-${(cardWidth + gap) * currentnum}px)`;
-    } else if (currentnum < totalCards * 3) {
-        currentnum = totalCards * 3 + totalCards - 1;
-        slider.style.transform = `translateX(-${(cardWidth + gap) * currentnum}px)`;
-    }
-}
-
-function initializeSlider() {
-    updateText(currentnum);
-    moveSlider();
-
-    nextArrow.addEventListener('click', () => {
-        currentnum += 1; 
-        moveSlider();
-
-        slider.addEventListener('transitionend', resetSliderPosition, { once: true });
-
-        updateText(currentnum);
-    });
-}
-
-initializeSlider();
-
-
+const ehsLargeCardSlider = document.querySelector('.card-slider');
+        const ehsLargeCards = document.querySelectorAll('.ehs-card');
+        const ehsLargeNextArrow = document.querySelector('.next-arrow');
+        
+        let ehsLargeCurrentIndex = 0;
+        const ehsLargeTotalCards = ehsLargeCards.length;
+    
+        // Clone the cards and append them to the slider
+        function ehsLargeCloneCards() {
+            ehsLargeCards.forEach(card => {
+                const ehsLargeClone = card.cloneNode(true);
+                ehsLargeCardSlider.appendChild(ehsLargeClone);
+            });
+        }
+    
+        // Function to update the displayed card information
+        function ehsLargeUpdateCardDisplay() {
+            const ehsLargeCurrentCard = ehsLargeCards[ehsLargeCurrentIndex];
+            const ehsLargeCardNameDisplay = document.getElementById('card-name-display');
+            const ehsLargeEhsName = document.getElementById('ehs-name');
+            const ehsLargeEhsDescription = document.getElementById('ehs-description');
+    
+            ehsLargeCardNameDisplay.textContent = ehsLargeCurrentCard.dataset.name;
+            ehsLargeEhsName.textContent = ehsLargeCurrentCard.querySelector('.card-name').textContent;
+            ehsLargeEhsDescription.textContent = ehsLargeCurrentCard.dataset.description;
+        }
+    
+        // Function to show the next card
+        function ehsLargeShowNextCard() {
+            ehsLargeCurrentIndex++;
+            
+            // If we reach the end of the original cards, jump to the first card
+            if (ehsLargeCurrentIndex >= ehsLargeTotalCards) {
+                ehsLargeCurrentIndex = 0; // Reset to first card
+                const ehsLargeOffset = -ehsLargeCurrentIndex * (ehsLargeCards[0].offsetWidth + 10); // Calculate offset for jumping
+                ehsLargeCardSlider.style.transition = 'none'; // Disable transition for instant jump
+                ehsLargeCardSlider.style.transform = `translateX(${ehsLargeOffset}px)`;
+                setTimeout(() => {
+                    ehsLargeCardSlider.style.transition = 'transform 0.4s ease'; // Re-enable transition
+                    ehsLargeShowNextCard(); // Call next card to create a seamless effect
+                }, 50); // Small delay to allow the jump to take effect
+            } else {
+                const ehsLargeOffset = -ehsLargeCurrentIndex * (ehsLargeCards[0].offsetWidth + 10); // Calculate offset for sliding
+                ehsLargeCardSlider.style.transform = `translateX(${ehsLargeOffset}px)`;
+            }
+    
+            ehsLargeUpdateCardDisplay();
+        }
+    
+        // Initialize the card display and clone cards
+        ehsLargeCloneCards();
+        ehsLargeUpdateCardDisplay();
+    
+        // Add event listener for the next arrow
+        ehsLargeNextArrow.addEventListener('click', ehsLargeShowNextCard);
 // EHS HEROES END LARGE SCREEN
 
 // EHS HEROES SMALL SCREEN
@@ -390,43 +378,43 @@ const ehsSmallCards = [
     {
         title: "Wasili Gusko",
         upperTitle: "Swire Coca-Cola",
-        description: "In just six months of implementation, we’ve experienced significant improvements in our operational efficiency and safety culture. We plan to expand AI technology to additional facilities and continue developing the project.",
+        description: "In just six months of implementation, we’ve experienced significant improvements in our operational efficiency and safety culture.",
         image: "man.png"
     },
     {
         title: "Hans Jhon",
         upperTitle: "IcyWind",
-        description: "Our commitment to ensuring safe work environments is significantly enhanced by our key ally. By providing real-time insights into leading indicators, the platform enables us to make proactive improvements that reduce risks for our frontline teams.",
+        description: "Our commitment to ensuring safe work environments is significantly enhanced by our key ally.",
         image: "man.png"
     },
     {
         title: "Allan Parsalle",
         upperTitle: "Griggles",
-        description: "Our dedication to safe work environments is bolstered by our trusted partner. With real-time insights into key indicators, the platform empowers us to implement proactive measures that minimize risks for our frontline teams.",
+        description: "Our dedication to safe work environments is bolstered by our trusted partner.",
         image: "man.png"
     },
     {
         title: "Chris Turnor",
         upperTitle: "Amazon",
-        description: "We are proud to have a vital partner in our mission to create safe work environments. By providing real-time visibility into leading indicators, the platform helps us proactively address risks and improve safety for our frontline teams.",
+        description: "We are proud to have a vital partner in our mission to create safe work environments.",
         image: "man.png"
     },
     {
         title: "Seth Rollin",
         upperTitle: "Hutamaki",
-        description: "Our commitment to providing a safe workplace is strengthened by our essential partner. The platform’s real-time insights into critical indicators enable us to proactively mitigate risks for our frontline employees.",
+        description: "Our commitment to providing a safe workplace is strengthened by our essential partner.",
         image: "man.png"
     },
     {
         title: "Williams Hogan",
         upperTitle: "Coats",
-        description: "As a key ally in our safety initiatives, our partner equips us with real-time insights into leading indicators. This empowers us to drive proactive changes that effectively reduce risks for our frontline teams.",
+        description: "As a key ally in our safety initiatives, our partner equips us with real-time insights.",
         image: "man.png"
     },
     {
         title: "Wasili Gusko",
         upperTitle: "Suntory Product Limited",
-        description: "Our partnership is crucial in our mission to foster safe work environments. The platform provides real-time insights into essential indicators, allowing us to proactively address risks for our frontline teams.",
+        description: "Our partnership is crucial in our mission to foster safe work environments.",
         image: "man.png"
     }
 ];
@@ -434,6 +422,7 @@ const ehsSmallCards = [
 const cardContainer = document.getElementById("small-ehs-card-container");
 const titleElement = document.getElementById("card-title");
 const descriptionElement = document.getElementById("card-description");
+const titleSpanElement = document.getElementById("card-title-span"); // New span element
 const prevButton = document.getElementById("prev-button");
 const nextButton = document.getElementById("next-button");
 
@@ -441,7 +430,7 @@ let ehsSmallCurrentIndex = 0;
 
 // Create cards by repeating the original set 3 times
 function initializeCards() {
-    for (let i = 0; i < 3; i++) { // Loop 3 times to clone cards
+    for (let i = 0; i < 3; i++) {
         ehsSmallCards.forEach((cardData, index) => {
             const card = createCard(cardData);
             cardContainer.appendChild(card);
@@ -455,28 +444,25 @@ function initializeCards() {
 function createCard(cardData) {
     const card = document.createElement("div");
     card.classList.add("ehs-small-card");
-    card.innerHTML = `
-        <img src="${cardData.image}" alt="${cardData.title}">
-        <h3>${cardData.title}</h3>
-    `;
+    card.innerHTML = `<img src="${cardData.image}" alt="${cardData.title}"><h3>${cardData.title}</h3>`;
     return card;
 }
 
 function updateCards() {
     const cards = document.querySelectorAll('.ehs-small-card');
-    const cardWidth = 250; // Card width
-    const cardMargin = 10; // Margin between cards
-    const totalWidth = cardWidth + cardMargin * 2; // Total width of card including margin
+    const cardWidth = 250; 
+    const cardMargin = 10; 
+    const totalWidth = cardWidth + cardMargin * 2; 
 
     cards.forEach((card, index) => {
-        card.style.transition = "transform 0.5s ease"; // Add smooth transition
+        card.style.transition = "transform 0.5s ease";
         card.style.transform = `translateX(${(index - ehsSmallCurrentIndex) * totalWidth}px)`;
     });
 
-    // Update text elements for the active card
     const actualIndex = ehsSmallCurrentIndex % ehsSmallCards.length;
     titleElement.textContent = ehsSmallCards[actualIndex].upperTitle;
     descriptionElement.textContent = ehsSmallCards[actualIndex].description;
+    titleSpanElement.textContent = ehsSmallCards[actualIndex].title; // Update span with title
 }
 
 // Button event listeners
@@ -493,7 +479,6 @@ nextButton.addEventListener("click", () => {
 // Initialize and update cards
 initializeCards();
 updateCards();
-
 // EHS HEROES END SMALL SCREEN
 
 

@@ -583,70 +583,73 @@
     <!-- MAP CONTAINER END-->
 
     <!-- EHS HEROES BIG SCREEN */ -->
-    <div id="ehs-main-container" >
+    <div id="ehs-main-container">
         <div id="ehs-main-heading">Welcoming Safety Advocates</div>
         <div id="ehs-second-main-container">
             <div id="ehs-left-container">
+                <span id="card-name-display"></span> <!-- Display card name here -->
                 <h2 id="ehs-name">EHS Hero Name</h2>
                 <p id="ehs-description">Introducing our hero who is transforming workplace safety.</p>
             </div>
             <div id="ehs-right-container">
                 <div class="card-slider">
-                    <div class="ehs-card"  data-name="Swire Coca-Cola"
-                      data-description="In just six months of implementation, we’ve experienced significant improvements in our operational efficiency and safety culture. We plan to expand AI technology to additional facilities and continue developing the project." >
+                    <div class="ehs-card" data-name="Swire Coca-Cola"
+                        data-description="In just six months of implementation, we’ve experienced significant improvements in our operational efficiency and safety culture. We plan to expand AI technology to additional facilities and continue developing the project.">
                         <img src="man.png" alt="person 1">
                         <div class="card-name">Wasili Gusko</div>
                     </div>
-                    <div class="ehs-card"  data-name="IcyWind"
-                      data-description="Our commitment to ensuring safe work environments is significantly enhanced by our key ally. By providing real-time insights into leading indicators, the platform enables us to make proactive improvements that reduce risks for our frontline teams." >
+                    <div class="ehs-card" data-name="IcyWind"
+                        data-description="Our commitment to ensuring safe work environments is significantly enhanced by our key ally. By providing real-time insights into leading indicators, the platform enables us to make proactive improvements that reduce risks for our frontline teams.">
                         <img src="man.png" alt="person 2">
                         <div class="card-name">Hans Jhon</div>
                     </div>
-                    <div class="ehs-card"  data-name="Griggles"
-                      data-description="Our dedication to safe work environments is bolstered by our trusted partner. With real-time insights into key indicators, the platform empowers us to implement proactive measures that minimize risks for our frontline teams." >
+                    <div class="ehs-card" data-name="Griggles"
+                        data-description="Our dedication to safe work environments is bolstered by our trusted partner. With real-time insights into key indicators, the platform empowers us to implement proactive measures that minimize risks for our frontline teams.">
                         <img src="man.png" alt="person 3">
                         <div class="card-name">Allan Parsalle</div>
                     </div>
-                    <div class="ehs-card"  data-name="Amazon"
-                      data-description="We are proud to have a vital partner in our mission to create safe work environments. By providing real-time visibility into leading indicators, the platform helps us proactively address risks and improve safety for our frontline teams." >
+                    <div class="ehs-card" data-name="Amazon"
+                        data-description="We are proud to have a vital partner in our mission to create safe work environments. By providing real-time visibility into leading indicators, the platform helps us proactively address risks and improve safety for our frontline teams.">
                         <img src="man.png" alt="person 4">
                         <div class="card-name">Chris Turnor</div>
                     </div>
-                    <div class="ehs-card"  data-name="Hutamaki"
-                      data-description="Our commitment to providing a safe workplace is strengthened by our essential partner. The platform’s real-time insights into critical indicators enable us to proactively mitigate risks for our frontline employees." >
+                    <div class="ehs-card" data-name="Hutamaki"
+                        data-description="Our commitment to providing a safe workplace is strengthened by our essential partner. The platform’s real-time insights into critical indicators enable us to proactively mitigate risks for our frontline employees.">
                         <img src="man.png" alt="person 5">
                         <div class="card-name">Seth Rollin</div>
                     </div>
-                    <div class="ehs-card"  data-name="Coats"
-                      data-description="As a key ally in our safety initiatives, our partner equips us with real-time insights into leading indicators. This empowers us to drive proactive changes that effectively reduce risks for our frontline teams." >
+                    <div class="ehs-card" data-name="Coats"
+                        data-description="As a key ally in our safety initiatives, our partner equips us with real-time insights into leading indicators. This empowers us to drive proactive changes that effectively reduce risks for our frontline teams.">
                         <img src="man.png" alt="person 6">
                         <div class="card-name">Williams Hogan</div>
                     </div>
-                    <div class="ehs-card"  data-name="Suntory Product Limited"
-                      data-description="Our partnership is crucial in our mission to foster safe work environments. The platform provides real-time insights into essential indicators, allowing us to proactively address risks for our frontline teams." >
+                    <div class="ehs-card" data-name="Suntory Product Limited"
+                        data-description="Our partnership is crucial in our mission to foster safe work environments. The platform provides real-time insights into essential indicators, allowing us to proactively address risks for our frontline teams.">
                         <img src="man.png" alt="person 7">
                         <div class="card-name">Wasili Gusko</div>
                     </div>
                 </div>
-                <button class="arrow next-arrow">&#9654;</button> 
+                <button class="arrow next-arrow">&#62;</button>
             </div>
         </div>
-    </div>
+    </div>    
     <!-- EHS HEROES End */ -->
 
     <!-- EHS HEROES SMALL SCrEEN -->
-        <div id="ehs-small-main-container">
-            <div id="ehs-small-main-heading">Welcoming EHS Heroes</div>
-            <div id="ehs-small-card-container">
-                <button id="prev-button" class="nav-button">&#11164;</button>
-                <h6 id="card-title">Upper Title 1</h6>
-                <p id="card-description">Description for Card 1</p>
-                <div id="small-ehs-card-container">
+    <div id="ehs-small-main-container">
+        <div id="ehs-small-main-heading">Welcoming EHS Heroes</div>
+        <div id="ehs-small-card-container">
+            <span id="card-title-span"></span> <!-- Added ID here -->
+            <h6 id="card-title">Upper Title 1</h6>
+            <p id="card-description">Description for Card 1</p>
+            <div id="small-ehs-card-container">
+                <button id="prev-button" class="nav-button">&#60;</button>
                 <!-- Cards will be dynamically generated here Working in Js for Small screen -->
+                <button id="next-button" class="nav-button">&#62;</button> 
             </div>
-            <button id="next-button" class="nav-button">&#11166;</button> 
         </div>
     </div>
+
     <!-- EHS HEROES SMALL SCrEEN END -->
    
     <!-- INDUSTRY SPECIALIZATION  After 991px-->
@@ -943,7 +946,7 @@
             <div id="how-card">
                 <div id="how-card-img-container">
                     <img src="blog1.jpg" alt="Image 1" class="how-slider-img">
-                    <img src="blog2.jpg" alt="Image 2" class="how-slider-img">
+                    <img src="faq-blog1.png" alt="Image 2" class="how-slider-img">
                     <img src="blog3.jpg" alt="Image 3" class="how-slider-img">
                 </div>
                 <div id="how-card-text-container">
