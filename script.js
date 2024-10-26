@@ -669,7 +669,7 @@ document.querySelectorAll('.ourProduct-accordion-button').forEach(button => {
 // CHAT  IN WHATSAPP
 
 function openWhatsAppChat() {
-    const phoneNumber = '03032963506'; 
+    const phoneNumber = '+92032963506'; 
     const message = 'Hi, Thanks for Contacting Us.';
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

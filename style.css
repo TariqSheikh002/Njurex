@@ -3493,16 +3493,21 @@ justify-content: space-around;
     color: #000;
     text-align: left;
     overflow: hidden;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
-#bspecial-all-container-left h5:hover,
-#bspecial-all-container-mid h5:hover {
-    border-bottom: 2px solid #1c732c;
-    padding-left: 30px;
+#bspecial-all-container-left h5:focus,
+#bspecial-all-container-mid h5:focus{
+    color: #1c732c;
 }
+#bspecial-all-container-left h5:hover,
+#bspecial-all-container-mid h5:hover{
+    padding-left: 30px;
+    border-color: #1c732c;
+}
+
 #bspecial-all-container-left h5:hover::before,
-#bspecial-all-container-mid h5:hover::before {
+#bspecial-all-container-mid h5:hover::before{
     content: '➪'; 
     margin-right: 10px;
     position: absolute;
@@ -3512,9 +3517,11 @@ justify-content: space-around;
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    font-size: medium;
+    font-size: small;
+    padding: 0.5px;
     left: 0%;
     opacity: 1;
+    padding-left: 3px;
     animation: scaleFadeIn 0.5s ease forwards;
 }
 
@@ -3981,16 +3988,16 @@ justify-content: space-around;
     100%{ transform: scale(1); opacity: 0; }
 }
 .how-slider-img:nth-child(1){
-    animation: how-growShrink 25s infinite;
-    animation-delay: 3s;
+    animation: how-growShrink 15s infinite;
+    animation-delay: 5s;
 }
 .how-slider-img:nth-child(2){
-    animation: how-growShrink 25s infinite;
+    animation: how-growShrink 15s infinite;
     animation-delay: 5s;
 }
 .how-slider-img:nth-child(3){
-    animation: how-growShrink 25s infinite;
-    animation-delay: 7s; 
+    animation: how-growShrink 15s infinite;
+    animation-delay: 5s; 
 }
 /* CARD SLIDER HOW END */
 #how-card-text-container{

@@ -36,12 +36,11 @@
 }
 
 #medical-header-main-container h1 span {
-    display: inline-block; /* Allows individual animation */
-    opacity: 0; /* Start hidden */
-    transform: translateX(-30px); /* Start slightly off-screen */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
+    display: inline-block;
+    opacity: 0; 
+    transform: translateX(-30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
-/* Responsive text size */
 @media (max-width: 991px) {
     #medical-header-main-container {
         height: 450px;
@@ -182,8 +181,6 @@
 }
 @media (max-width: 1150px) {
     #second-portion{
-        /* flex-direction: column;
-        height: 1000px; */
         height: 450px;
     }
     #second-portion-left{
@@ -834,11 +831,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border: 1px solid red; */
 }
 #medical-card-second-container-left {
-    height: auto; /* Allow height to be determined by content */
-    max-height: 100%; /* Limit height based on design */
+    height: auto; 
+    max-height: 100%;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -855,8 +851,8 @@
     padding-bottom: 50px;
     background: white;
     z-index: 1; 
-    max-height: calc(100vh - 20px); /* Adjust based on your layout */
-    overflow-y: auto; /* Allow scrolling if content exceeds max height */
+    max-height: calc(100vh - 20px); 
+    overflow-y: auto; 
 }
 #medical-card-second-container-left ul li {
     font-size: larger;
@@ -1032,8 +1028,8 @@
     
     
 #medical-card-second-container-left {
-    height: auto; /* Allow height to be determined by content */
-    max-height: 100%; /* Limit height based on design */
+    height: auto; 
+    max-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1052,8 +1048,8 @@
     background: white;
     z-index: 1;
      
-    max-height: calc(100vh - 20px); /* Adjust based on your layout */
-    overflow-y: auto; /* Allow scrolling if content exceeds max height */
+    max-height: calc(100vh - 20px);
+    overflow-y: auto; 
 }
 #medical-card-second-container-left ul li {
     font-size: larger;
@@ -1108,8 +1104,8 @@
     }
     
 #medical-card-second-container-left {
-    height: auto; /* Allow height to be determined by content */
-    max-height: 100%; /* Limit height based on design */
+    height: auto; 
+    max-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1127,9 +1123,8 @@
     top: 10%; 
     background: white;
     z-index: 1;
-     
-    max-height: calc(100vh - 20px); /* Adjust based on your layout */
-    overflow-y: auto; /* Allow scrolling if content exceeds max height */
+    max-height: calc(100vh - 20px);
+    overflow-y: auto; 
 }
 #medical-card-second-container-left ul li {
     font-size: larger;
@@ -1179,8 +1174,8 @@
     }
     
 #medical-card-second-container-left {
-    height: auto; /* Allow height to be determined by content */
-    max-height: 100%; /* Limit height based on design */
+    height: auto; 
+    max-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1245,8 +1240,8 @@
     }
     
 #medical-card-second-container-left {
-    height: auto; /* Allow height to be determined by content */
-    max-height: 100%; /* Limit height based on design */
+    height: auto;
+    max-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;

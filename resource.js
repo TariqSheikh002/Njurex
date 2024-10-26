@@ -163,7 +163,7 @@ document.addEventListener('click', function(event) {
 // CHAT  IN WHATSAPP
 
 function openWhatsAppChat() {
-    const phoneNumber = '03032963506'; 
+    const phoneNumber = '+92032963506'; 
 
     const message = 'Hi, Thanks for Contacting Us.';
     const encodedMessage = encodeURIComponent(message);
