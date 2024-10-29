@@ -103,7 +103,7 @@ body{
     padding: 0;
 }
 .navbar-brand {
-    width: 32%;
+    width: 20%;
     display: flex;
     align-items: center; 
 }
@@ -116,7 +116,7 @@ body{
     height: 70px;
     width: 400px;
     position: relative;
-    right: 50px;
+    right: 0px;
     background-image: url(logo-landscape.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -146,7 +146,7 @@ body{
     align-items: center;
     justify-content: center;
     border-right: 1px solid transparent;
-    width: 200px;
+    width: 250px;
     cursor: pointer;
     border-left: 1px solid white;
     position: relative;
@@ -2785,6 +2785,7 @@ justify-content: space-around;
     align-items: center;
     flex-direction: column;
     padding: 10px;
+    padding-bottom: 20px;
 }
 
 #ehs-second-main-container {
@@ -2875,6 +2876,13 @@ justify-content: space-around;
 .next-arrow {
     right: 5px; 
 }
+.card-slider {
+    display: flex;
+    transition: transform 0.4s ease;
+    padding-left: 0;
+    max-width: calc(150px * 3); /* Adjust based on the number of visible cards */
+}
+
 @media (max-width: 991px) {
     #ehs-main-container{
         display: none;
@@ -2894,6 +2902,7 @@ justify-content: space-around;
     padding: 10px;
     display: none; /* Initially hidden */
     position: relative; 
+    padding-bottom: 20px;
 }
 
 #ehs-small-main-heading {
@@ -5006,6 +5015,7 @@ background-image: url('news\ card3.jpg');
 #last-footer-top-left{
     height: 100%;
     width: 35%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -5124,6 +5134,14 @@ background-image: url('news\ card3.jpg');
 }
 #last-footer-bottom-right a:hover{
     color: #64ab2f;
+}
+
+@media (max-width: 3000px){
+
+#last-footer-top-left img{
+    width: 200px;
+    height: 80%;
+}
 }
 @media (max-width: 991px){
     #last-footer-top{

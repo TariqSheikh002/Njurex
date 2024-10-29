@@ -316,64 +316,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // EHS HEROES LARGE SCREEN 
 const ehsLargeCardSlider = document.querySelector('.card-slider');
-        const ehsLargeCards = document.querySelectorAll('.ehs-card');
-        const ehsLargeNextArrow = document.querySelector('.next-arrow');
-        
-        let ehsLargeCurrentIndex = 0;
-        const ehsLargeTotalCards = ehsLargeCards.length;
-    
-        // Clone the cards and append them to the slider
-        function ehsLargeCloneCards() {
-            ehsLargeCards.forEach(card => {
-                const ehsLargeClone = card.cloneNode(true);
-                ehsLargeCardSlider.appendChild(ehsLargeClone);
-            });
-        }
-    
-        // Function to update the displayed card information
-        function ehsLargeUpdateCardDisplay() {
-            const ehsLargeCurrentCard = ehsLargeCards[ehsLargeCurrentIndex];
-            const ehsLargeCardNameDisplay = document.getElementById('card-name-display');
-            const ehsLargeEhsName = document.getElementById('ehs-name');
-            const ehsLargeEhsDescription = document.getElementById('ehs-description');
-    
-            ehsLargeCardNameDisplay.textContent = ehsLargeCurrentCard.dataset.name;
-            ehsLargeEhsName.textContent = ehsLargeCurrentCard.querySelector('.card-name').textContent;
-            ehsLargeEhsDescription.textContent = ehsLargeCurrentCard.dataset.description;
-        }
-    
-        // Function to show the next card
-        function ehsLargeShowNextCard() {
-            ehsLargeCurrentIndex++;
-            
-            // If we reach the end of the original cards, jump to the first card
-            if (ehsLargeCurrentIndex >= ehsLargeTotalCards) {
-                ehsLargeCurrentIndex = 0; // Reset to first card
-                const ehsLargeOffset = -ehsLargeCurrentIndex * (ehsLargeCards[0].offsetWidth + 10); // Calculate offset for jumping
-                ehsLargeCardSlider.style.transition = 'none'; // Disable transition for instant jump
-                ehsLargeCardSlider.style.transform = `translateX(${ehsLargeOffset}px)`;
-                setTimeout(() => {
-                    ehsLargeCardSlider.style.transition = 'transform 0.4s ease'; // Re-enable transition
-                    ehsLargeShowNextCard(); // Call next card to create a seamless effect
-                }, 50); // Small delay to allow the jump to take effect
-            } else {
-                const ehsLargeOffset = -ehsLargeCurrentIndex * (ehsLargeCards[0].offsetWidth + 10); // Calculate offset for sliding
-                ehsLargeCardSlider.style.transform = `translateX(${ehsLargeOffset}px)`;
-            }
-    
-            ehsLargeUpdateCardDisplay();
-        }
-    
-        // Initialize the card display and clone cards
-        ehsLargeCloneCards();
-        ehsLargeUpdateCardDisplay();
-    
-        // Add event listener for the next arrow
-        ehsLargeNextArrow.addEventListener('click', ehsLargeShowNextCard);
+const ehsLargeCards = document.querySelectorAll('.ehs-card');
+const ehsLargeNextArrow = document.querySelector('.next-arrow');
+
+let ehsLargeCurrentIndex = 0;
+const ehsLargeTotalCards = ehsLargeCards.length;
+const cloneCount = 5; // Number of times to clone the cards
+let isUpdating = false; // Flag to prevent rapid clicks
+
+// Function to clone cards
+function cloneCards() {
+    for (let i = 0; i < cloneCount; i++) {
+        ehsLargeCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            ehsLargeCardSlider.appendChild(clone);
+        });
+    }
+}
+
+// Function to update the displayed card information and move the slider
+function ehsLargeUpdateCardDisplay() {
+    const ehsLargeCardNameDisplay = document.getElementById('card-name-display');
+    const ehsLargeEhsName = document.getElementById('ehs-name');
+    const ehsLargeEhsDescription = document.getElementById('ehs-description');
+
+    // Update the display with the current card's information
+    const currentCard = ehsLargeCards[(ehsLargeCurrentIndex % ehsLargeTotalCards)];
+    ehsLargeCardNameDisplay.textContent = currentCard.dataset.name;
+    ehsLargeEhsName.textContent = currentCard.querySelector('.card-name').textContent;
+    ehsLargeEhsDescription.textContent = currentCard.dataset.description;
+
+    // Move the slider to the current card
+    const ehsLargeOffset = -ehsLargeCurrentIndex * (currentCard.offsetWidth + 10); // Adjust for card width and margin
+    ehsLargeCardSlider.style.transform = `translateX(${ehsLargeOffset}px)`;
+}
+
+// Function to show the next card with debounce
+function ehsLargeShowNextCard() {
+    if (isUpdating) return; // Prevent further updates if already updating
+    isUpdating = true;
+
+    ehsLargeCurrentIndex++;
+    ehsLargeUpdateCardDisplay();
+
+    // Allow updating again after a short delay
+    setTimeout(() => {
+        isUpdating = false;
+    }, 300); // Adjust the timeout duration as needed
+}
+
+// Initialize the card display and clone cards
+cloneCards();
+ehsLargeUpdateCardDisplay();
+
+// Add event listener for the next arrow
+ehsLargeNextArrow.addEventListener('click', ehsLargeShowNextCard);
 // EHS HEROES END LARGE SCREEN
 
 // EHS HEROES SMALL SCREEN
-
 const ehsSmallCards = [
     {
         title: "Wasili Gusko",
@@ -385,38 +385,26 @@ const ehsSmallCards = [
         title: "Hans Jhon",
         upperTitle: "IcyWind",
         description: "Our commitment to ensuring safe work environments is significantly enhanced by our key ally.",
-        image: "man.png"
+        image: "man3.png"
     },
     {
         title: "Allan Parsalle",
         upperTitle: "Griggles",
         description: "Our dedication to safe work environments is bolstered by our trusted partner.",
-        image: "man.png"
+        image: "man2.png"
     },
     {
         title: "Chris Turnor",
         upperTitle: "Amazon",
         description: "We are proud to have a vital partner in our mission to create safe work environments.",
-        image: "man.png"
+        image: "man4.png"
     },
     {
         title: "Seth Rollin",
         upperTitle: "Hutamaki",
         description: "Our commitment to providing a safe workplace is strengthened by our essential partner.",
-        image: "man.png"
+        image: "man5.png"
     },
-    {
-        title: "Williams Hogan",
-        upperTitle: "Coats",
-        description: "As a key ally in our safety initiatives, our partner equips us with real-time insights.",
-        image: "man.png"
-    },
-    {
-        title: "Wasili Gusko",
-        upperTitle: "Suntory Product Limited",
-        description: "Our partnership is crucial in our mission to foster safe work environments.",
-        image: "man.png"
-    }
 ];
 
 const cardContainer = document.getElementById("small-ehs-card-container");
@@ -431,10 +419,10 @@ let ehsSmallCurrentIndex = 0;
 // Create cards by repeating the original set 3 times
 function initializeCards() {
     for (let i = 0; i < 3; i++) {
-        ehsSmallCards.forEach((cardData, index) => {
+        ehsSmallCards.forEach(cardData => {
             const card = createCard(cardData);
             cardContainer.appendChild(card);
-            if (index !== 0 || i !== 0) {
+            if (i !== 0) {
                 card.style.transform = `translateX(100%)`;
             }
         });
@@ -479,6 +467,7 @@ nextButton.addEventListener("click", () => {
 // Initialize and update cards
 initializeCards();
 updateCards();
+
 // EHS HEROES END SMALL SCREEN
 
 
