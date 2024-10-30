@@ -321,56 +321,66 @@ const ehsLargeNextArrow = document.querySelector('.next-arrow');
 
 let ehsLargeCurrentIndex = 0;
 const ehsLargeTotalCards = ehsLargeCards.length;
-const cloneCount = 5; // Number of times to clone the cards
-let isUpdating = false; // Flag to prevent rapid clicks
+const cloneCount = 50;  
+let isUpdating = false;
 
-// Function to clone cards
+const allCards = Array.from(ehsLargeCards); 
+
 function cloneCards() {
     for (let i = 0; i < cloneCount; i++) {
         ehsLargeCards.forEach(card => {
             const clone = card.cloneNode(true);
             ehsLargeCardSlider.appendChild(clone);
+            clone.addEventListener('click', handleCardClick);
+            allCards.push(clone); 
         });
     }
 }
 
-// Function to update the displayed card information and move the slider
 function ehsLargeUpdateCardDisplay() {
     const ehsLargeCardNameDisplay = document.getElementById('card-name-display');
     const ehsLargeEhsName = document.getElementById('ehs-name');
     const ehsLargeEhsDescription = document.getElementById('ehs-description');
 
-    // Update the display with the current card's information
-    const currentCard = ehsLargeCards[(ehsLargeCurrentIndex % ehsLargeTotalCards)];
+    const currentCard = allCards[ehsLargeCurrentIndex % allCards.length]; 
     ehsLargeCardNameDisplay.textContent = currentCard.dataset.name;
     ehsLargeEhsName.textContent = currentCard.querySelector('.card-name').textContent;
     ehsLargeEhsDescription.textContent = currentCard.dataset.description;
 
-    // Move the slider to the current card
-    const ehsLargeOffset = -ehsLargeCurrentIndex * (currentCard.offsetWidth + 10); // Adjust for card width and margin
+    const ehsLargeOffset = -ehsLargeCurrentIndex * (currentCard.offsetWidth + 10);
     ehsLargeCardSlider.style.transform = `translateX(${ehsLargeOffset}px)`;
 }
 
-// Function to show the next card with debounce
 function ehsLargeShowNextCard() {
-    if (isUpdating) return; // Prevent further updates if already updating
+    if (isUpdating) return; 
     isUpdating = true;
 
     ehsLargeCurrentIndex++;
     ehsLargeUpdateCardDisplay();
-
-    // Allow updating again after a short delay
     setTimeout(() => {
         isUpdating = false;
-    }, 300); // Adjust the timeout duration as needed
+    }, 300);
 }
 
-// Initialize the card display and clone cards
+function handleCardClick(event) {
+    const card = event.currentTarget; 
+    ehsLargeCurrentIndex = allCards.indexOf(card);
+    ehsLargeUpdateCardDisplay(); 
+
+    const clone = card.cloneNode(true);
+    ehsLargeCardSlider.appendChild(clone);
+    clone.addEventListener('click', handleCardClick);
+    allCards.push(clone); 
+}
+
+ehsLargeCards.forEach(card => {
+    card.addEventListener('click', handleCardClick);
+});
+
 cloneCards();
 ehsLargeUpdateCardDisplay();
-
-// Add event listener for the next arrow
 ehsLargeNextArrow.addEventListener('click', ehsLargeShowNextCard);
+
 // EHS HEROES END LARGE SCREEN
 
 // EHS HEROES SMALL SCREEN
