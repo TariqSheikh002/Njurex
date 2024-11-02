@@ -2366,13 +2366,26 @@ justify-content: space-around;
     font-size: 12px;
     color: #64ab2f;
     margin-right: 5px;
-}
-#harness-points p{
+}#harness-points p {
     color: white;
     font-size: small;
     position: relative;
     top: 50px;
 }
+
+#harness-points p::before {
+    content: '';
+    display: inline-block;
+    width: 8px; 
+    height: 8px;
+    background-image: linear-gradient(to right,#64ab2f,#1c732c);
+    position: relative;
+    /* right: 7px; */
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
 #harness-points p span{
     height: 10px;
     width: 10px;
