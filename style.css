@@ -5294,8 +5294,8 @@ background-image: url('news\ card3.jpg');
 .message-icon{
     border-radius: 50%;
     padding: 10px;
-    height: 100px;
-    width: 150px;
+    height: 80px;
+    width: 130px;
     transition: font-size 0.3s;
 }
 @media (max-width: 400px){
@@ -5373,3 +5373,112 @@ background-image: url('news\ card3.jpg');
 }
 
 /* COOKIES BAR END */
+
+/* CALENDLY */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Keyframe Animation for rotating the icon */
+@keyframes rotateLeftRight {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Calendly Icon Container Styles */
+#calendly-icon-container {
+    height: 40px;
+    width: 40px;
+    position: fixed; 
+    bottom: 110px;
+    background-color: white; 
+    right: 35px; 
+    border-radius: 50%;
+    background-image: url('Calendly-icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+    background-position: center;
+    animation: rotateLeftRight 2s infinite ease-in-out;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.5s;
+    z-index: 10000;
+}
+#calendly-icon-container:hover{
+    animation: none;
+}
+#calendly-icon-container::before {
+    height: 30px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "Book a Meeting";
+    position: absolute;
+    top: -30px;
+    left: -100%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 20000;
+    white-space: nowrap;
+    transition: all 1s;
+}
+#calendly-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+#popup-content {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background: white;
+    border-radius: 10px;
+    z-index: 1000;
+    overflow: hidden;
+}
+#close-popup {
+    position: absolute;
+    top: 10px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 5px ;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+#close-popup:hover {
+    background: darkred;
+}
+/* CALENDLY END */

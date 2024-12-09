@@ -306,3 +306,24 @@ window.onload = function() {
         }, index * 100); // Stagger each letter's animation
     });
 };
+
+
+
+// CALENDLY
+document.addEventListener('DOMContentLoaded', function() {
+    const calendlyIcon = document.getElementById('calendly-icon-container');
+    const calendlyPopup = document.getElementById('calendly-popup');
+    const closeButton = document.getElementById('close-popup');
+    calendlyIcon.addEventListener('click', function() {
+        calendlyPopup.style.display = 'flex';
+    });
+    closeButton.addEventListener('click', function() {
+        calendlyPopup.style.display = 'none';
+    });
+    calendlyPopup.addEventListener('click', function(event) {
+        if (event.target === calendlyPopup) {
+            calendlyPopup.style.display = 'none';
+        }
+    });
+});
+// CAlendly End
