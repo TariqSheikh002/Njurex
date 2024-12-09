@@ -5,6 +5,98 @@
     font-family: 'Poppins', sans-serif;
 }
 
+#schedule-top-main-container{
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+    background-color: #121216;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    width: 100%;
+}
+#schedule-top-container{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#schedule-top-container h4{
+    color: white;
+}
+#schedule-top-container h2{
+    color: #4b9533;
+    font-weight: 900;
+}
+#schedule-top-container p{
+    color: white;
+}
+#schedule-calendly-container {
+    position: relative; /* Required for the pseudo-element to be positioned correctly */
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    background-image: url(backgroundSchedule.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#schedule-calendly-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+#schedule-calendly-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+#schedule-calendly-container h2 {
+    color: #000000;
+    font-weight: 700;
+}
+
+.calendly-inline-widget {
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    #schedule-top-container h4{
+        font-size: 15px;
+    }
+    #schedule-top-container h2{
+        font-size: 20px;
+    }
+    #schedule-top-container p{
+        font-size: 9px;
+    }
+    #schedule-calendly-container {
+        height: 800px;
+        padding: 0px;
+    }
+    #schedule-calendly-container h2 {
+        font-size: 15px;
+    }
+    
+}
+
 #schedule-main-container{
     height: 1000px;
     display: flex;
@@ -103,7 +195,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 50px;
+    padding: 20px;
     padding-bottom: 0;
     padding-top: 0;
 }
