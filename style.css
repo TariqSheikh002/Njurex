@@ -170,7 +170,7 @@ body{
 }
 #dot {
     border-radius: 50%;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
 
     width: 10px;
     margin-left: 20px;
@@ -186,7 +186,7 @@ body{
     position: absolute;
     width: 0;
     height: 3px;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     transition: width 0.2s ease-in-out;
 }
 .nav-item::before {
@@ -355,7 +355,7 @@ body{
 .resource-linkedin-icon img {
     margin-left: 20px;
     border-radius: 5px;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1580,8 +1580,9 @@ body{
 .about-card {
     width: 200px;
     height: 300px;
-    /* border-radius: 10px; */
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#1c732c); 
+    border-radius: 05px;
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
+
     cursor: pointer;
     margin: 10px;
     position: relative;
@@ -2316,7 +2317,7 @@ body{
     width: 13px;
     margin-top: 5px;
     height: 13px;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
 
     border-radius: 50%;
 }
@@ -3102,7 +3103,7 @@ justify-content: space-around;
 #special-text #dot{
     width: 10px;
     height: 10px;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     border-radius: 50%;
     display: inline-block;
 }
@@ -3173,7 +3174,7 @@ justify-content: space-around;
 .special-faq-item.active,
 .special-faq-item:hover,
 .special-faq-item:focus {
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     background-size: 100% 100%;
     color: white;
 }
@@ -3413,7 +3414,7 @@ justify-content: space-around;
 #bspecial-text #dot{
     width: 10px;
     height: 10px;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     border-radius: 50%;
     display: inline-block; 
 }
@@ -3745,7 +3746,7 @@ justify-content: space-around;
     transition: all 0.5s;
 }
 #ourProduct-bottom-left-bottom button:hover{
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
 }
 #ourProduct-bottom-right{
     height: 100%;
@@ -3926,7 +3927,7 @@ justify-content: space-around;
 }
 #how-heading-left #dot{
     border-radius: 50%;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     color: #64ab2f;
     margin-right: 10px;
     width: 10px;
@@ -5037,7 +5038,7 @@ background-image: url('news\ card3.jpg');
     width: 40%;
     height: 80%;
     position: relative;
-    left: 15px;
+    left: 30px;
 }
 #last-footer-top-left button{
     height: 50px;
@@ -5065,7 +5066,7 @@ background-image: url('news\ card3.jpg');
     color: white; 
 }
 #last-footer-top-left button:hover{
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
 }
 #last-footer-top-right{
     height: 100%;
@@ -5087,7 +5088,7 @@ background-image: url('news\ card3.jpg');
     height: 60%;
     width: 70%;
     color: #63AD30;
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     background-size: 200% 100%;
     animation: shine 5s infinite;
     font-size: xx-large;
@@ -5151,7 +5152,7 @@ background-image: url('news\ card3.jpg');
     color: #64ab2f;
 }
 
-@media (max-width: 3000px){
+@media only screen and (max-width: 3000px) and (min-width: 2000px){
 
 #last-footer-top-left img{
     width: 200px;
@@ -5171,9 +5172,11 @@ background-image: url('news\ card3.jpg');
         align-items: center;
         margin-bottom: 20px;
     }
+    #last-footer-top-left img{
+        left: 0;
+    }
     #last-footer-top-left button{
         margin-left: 0;
-        margin-top: 20px;
     }
     #last-footer-top-right{
         height: 50%;
@@ -5198,6 +5201,9 @@ background-image: url('news\ card3.jpg');
     #last-footer-bottom-right{
         height: 20%;
     }
+    #last-footer-top-right h1 {
+        height: 60%;
+        width: auto;}
 }
 @media (max-width: 600px){
     #last-footer-top{
@@ -5341,7 +5347,7 @@ background-image: url('news\ card3.jpg');
 }
 
 #cookie-bar button:hover {
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
 
 
 }
@@ -5427,7 +5433,7 @@ background-image: url('news\ card3.jpg');
     top: -30px;
     left: -100%;
     transform: translateX(-50%);
-    background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    background-image: linear-gradient(to right,#1c732c,#1c732c); 
     color: white;
     padding: 10px;
     font-size: 12px;
