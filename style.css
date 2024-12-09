@@ -86,6 +86,7 @@ body{
     border-bottom: 1px solid white;
     height: 70px;
     background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533); 
+    /* background-image: linear-gradient(to right,#4b9533);  */
     width: 100%; 
     top: 0; 
     left: 0; 
@@ -132,6 +133,7 @@ body{
     width: 70%;
     /* background-color: #121216;  */
     background-image: linear-gradient(to right,#4b9533); 
+
     border-bottom: 1px solid white;
 }
 .navbar-nav {
@@ -172,16 +174,15 @@ body{
 #dot {
     border-radius: 50%;
     /* background-image: linear-gradient(to right,#1c732c,#64ab2f,#4b9533);  */
-    background-color: #fff;
-
+    background: #fff;
     width: 10px;
     margin-left: 20px;
     margin-top: 0px;
     height: 8px;
 }
 .nav-link:hover, .nav-link:focus, .nav-link:active {
-    color: rgb(255, 255, 255);  
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+    color: rgb(255, 255, 255);
 }
 /* .nav-item::before,
 .nav-item::after {
@@ -211,9 +212,8 @@ body{
 #last-nav-item {
     border-right: 1px solid transparent;
     width: 300px;
-    /* background-image: linear-gradient(to right,#1c732c,#1c732c,#64ab2f,#4b9533);  */
     background-image: linear-gradient(to right,#4b9533); 
-
+    /* background-image: linear-gradient(to right,#1c732c,#1c732c,#64ab2f,#4b9533);  */
     transition: all 0.5s;
     border-left: 1px solid white;
     box-shadow: inset 0 0 0 rgba(255, 255, 255, 0);
@@ -540,22 +540,14 @@ body{
         display: flex;
         align-items: center; 
     }
-    /* #logo {
+    #logo {
         height: 70px;
         width: 100px;
         margin-left:40px; 
-    } */
-    #logo {
-        height: 70px;
-        width: 400px;
-        position: relative;
-        right: 50px;
-        background-image: url(logo-landscape.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-clip: border-box;
     }
+    /* #logo {
+       
+    } */
     .nav-item {
         padding: 0;
         margin: 0;
@@ -587,7 +579,10 @@ body{
         position: relative;
         bottom: 10.5px;
     }
-    
+    .navbar-expand-lg .navbar-collapse {  
+        background-color: #121216; 
+        background-image: none;
+    }
     .navbar{
         border-bottom: none;
     }
@@ -598,6 +593,11 @@ body{
     /* #logo{
         height: 65px;
     } */
+    #logo {
+        height: 70px;
+        width: 80px;
+        margin-left:40px; 
+    }
     .nav-item{
         width: 100%;
         border: none;
