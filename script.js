@@ -935,7 +935,7 @@ const enterprise_images = [
     "Figma.png", "Flutter.png", "Dart.png", "MySQL.png", "Python.png", "MongoDB.png", 
     "Js.png", "React.png", "Angular.png", "Nodejs.png", "Rails.png", "PHP.png", 
     "Swift.png", "Kotlin.png", "Java.png", "Typescript.png", "Tensorflow.png", 
-    "Docker.png", "Redis.png", "GraphQL.png", "PostgreSQL.png", "Firebase.png", 
+    "Docker.png", "Redis.png", "GraphQL.png", "PostgreSQL.png", "firebase.png", 
     "Jupiter-notebook.png", "Sass.png"
 ];
 
