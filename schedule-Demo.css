@@ -35,6 +35,10 @@
 #schedule-top-container p{
     color: white;
 }
+#schedule-top-container span{
+    font-size: x-small;
+    color: white;
+}
 #schedule-calendly-container {
     position: relative; /* Required for the pseudo-element to be positioned correctly */
     height: 800px;
@@ -85,6 +89,9 @@
         font-size: 20px;
     }
     #schedule-top-container p{
+        font-size: x-small;
+    }
+    #schedule-top-container span{
         font-size: 9px;
     }
     #schedule-calendly-container {
