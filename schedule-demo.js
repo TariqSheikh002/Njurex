@@ -172,8 +172,9 @@ resourceDropdownContainer.addEventListener('mouseleave', function() {
 });
 // RESOURCE IMAGE
 const resourceImages = {
-    "resource-product-dropdown-content1": "resource-nav1.png",
-    "resource-product-dropdown-content2": "resource-nav2.png",
+
+    "resource-product-dropdown-content1": "blog1.png",
+    "resource-product-dropdown-content2": "blog2.png",
 };
 const resourceProductImage = document.getElementById('resource-product-image');
 if (resourceProductImage) {
