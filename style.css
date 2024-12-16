@@ -1619,22 +1619,22 @@ body{
 
 /* Hover Effects */
 #card1:hover{
-    background-image: url(blog1.jpg);
+    background-image: url(blog1.png);
 }
 #card2:hover{
-    background-image: url(blog1.jpg);
+    background-image: url(blog2.png);
 }
 #card3:hover{
-    background-image: url(blog1.jpg);
+    background-image: url(blog3.png);
 }
 #card4:hover{
-    background-image: url(blog1.jpg);
+    background-image: url(blog4.png);
 }
 #card5:hover{
-    background-image: url(blog1.jpg);
+    background-image: url(blog5.png);
 }
 #card6:hover{
-    background-image: url(blog1.jpg);
+    background-image: url(blog6.png);
 }
 .card-front p {
     font-size: x-small;
@@ -1722,7 +1722,7 @@ body{
     margin: 10px;
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 00px;
     padding-bottom: 30px;
 }
 .card-front p{
