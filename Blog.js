@@ -281,3 +281,24 @@ document.getElementById("back-to-top-btn").onclick = function() {
     });
 };
 // Back To Top
+
+
+
+
+// FAQ
+function toggleAnswer(index) {
+    var answer = document.getElementById('answer-' + index);
+    var heading = answer.previousElementSibling;
+    var plusMinus = heading.querySelector('.plus-minus');
+    
+    // Toggle the answer visibility and animation
+    if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+        plusMinus.textContent = "−";  // Change to minus sign
+        heading.classList.add('open');
+    } else {
+        answer.style.display = "none";
+        plusMinus.textContent = "+";  // Change to plus sign
+        heading.classList.remove('open');
+    }
+}
