@@ -36,14 +36,14 @@
     height: 300px;
     width: 100%;
     display: flex;
-    justify-content: left;
-    align-items: self-start;
-    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
 }
 #Blog-second-top-body img{
     height: 350px;
     border-radius: 20px;
-    width: 100%;
+    width: 45%;
     border: 2px solid #64ab2f;
 }
 #Blog-second-top-footer{
@@ -60,24 +60,74 @@
     letter-spacing: 0.5px;
     font-weight: 600;
 }
+@media only screen and (max-width: 3000px) and (min-width: 2000px){
+    #Blog-second-top-body img{
+        height: 500px;
+        border-radius: 20px;
+        width: 45%;
+        border: 2px solid #64ab2f;
+    }
+}
+@media (max-width: 768px){
+    #Blog-main-container{
+        height: 500px;
+        width: 100%;
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        background-color: #121216;
+        align-items: center;
+        justify-content: center;
+    }
+#Blog-second-top-body{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
+}
+#Blog-second-top-body img{
+    height: 200px;
+    border-radius: 20px;
+    width: 200px;
+    border: 2px solid #64ab2f;
+}
 
-
+#Blog-second-top-footer h1{
+    font-size: 27px;
+}
+}
 @media (max-width: 600px){
-    
- 
     #Blog-second-top-footer h1{
-        font-size: 30px;
+        font-size: 22px;
     }
     #Blog-second-top-header{
         font-size: small;
     }
 }
 @media (max-width: 400px){
+    #Blog-main-container{
+        height: 400px;
+        width: 100%;
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        background-color: #121216;
+        align-items: center;
+        justify-content: center;
+    }
     #Blog-second-top-footer h1{
-        font-size: 25px;
+        font-size: 18px;
     }
     #Blog-second-top-header{
         font-size: smaller;
+    }
+    #Blog-second-top-body img{
+        height: 150px;
+        border-radius: 20px;
+        width: 150px;
+        border: 2px solid #64ab2f;
     }
     #Blog-second-social-date-container span{
         font-size: 10px;
@@ -146,9 +196,19 @@
 #blog-text-right-second-container p{
     font-size: smaller;
 }
+#blog-text-right-second-container p b{
+    color: #64ab2f;
+}
+.first-word {
+    color: green;
+    font-weight: 900;
+    font-size: 40px;
+}
+
 #blog-text-right-second-container h2{
     font-weight: 600;
     letter-spacing: 0.5px;
+    color: rgb(5, 77, 28);
     font-size: x-large;
     
 }
@@ -180,3 +240,4 @@
         
     }
 }
+

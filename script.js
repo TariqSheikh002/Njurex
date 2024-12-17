@@ -995,3 +995,164 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 // CAlendly End
+
+
+// All Harness
+popup = document.getElementById('popup');
+const popupMessage = document.getElementById('popup-message');
+const closeBtn = document.querySelector('.close');
+const videoContainer = document.getElementById('all-harness-second-main');
+const listItems = document.querySelectorAll('#all-haress-tab-container li');
+const videoData = [
+    '<video id="video1" class="fill-video rounded-video" autoplay muted><source src="video1.mp4" type="video/mp4"></video>',
+    '<video id="video2" class="fill-video rounded-video" autoplay muted><source src="video2.mp4" type="video/mp4"></video>',
+    '<video id="video3" class="fill-video rounded-video" autoplay muted><source src="video3.mp4" type="video/mp4"></video>',
+    '<video id="video4" class="fill-video rounded-video" autoplay muted><source src="video4.mp4" type="video/mp4"></video>'
+];
+
+function createProgressBar() {
+    const progressBarWrapper = document.createElement('div');
+    progressBarWrapper.classList.add('progress-bar-wrapper');
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+    progressBarWrapper.appendChild(progressBar);
+    return progressBarWrapper;
+}
+
+function updateProgressBar(progressBar, videoElement) {
+    const percentage = (videoElement.currentTime / videoElement.duration) * 100;
+    progressBar.style.width = `${percentage}%`;
+}
+
+function playNextVideo(index) {
+    videoContainer.innerHTML = videoData[index];
+
+    const contentHarnessRight = document.querySelector('#content-harness-right video');
+    const newVideo = document.createElement('video');
+    newVideo.setAttribute('src', `video${index + 1}.mp4`);
+    newVideo.setAttribute('loop', '');
+    newVideo.setAttribute('muted', '');
+    newVideo.setAttribute('autoplay', '');
+    contentHarnessRight.parentNode.replaceChild(newVideo, contentHarnessRight);
+
+    const progressBarWrapper = createProgressBar();
+    contentHarnessRight.parentNode.appendChild(progressBarWrapper);
+    const progressBar = progressBarWrapper.querySelector('.progress-bar');
+    
+    newVideo.addEventListener('timeupdate', () => {
+        updateProgressBar(progressBar, newVideo);
+    });
+
+    newVideo.addEventListener('ended', () => {
+        PopcurrentIndex = (PopcurrentIndex + 1) % videoData.length;
+        playNextVideo(PopcurrentIndex);
+    });
+
+    newVideo.play();
+}
+
+listItems.forEach((li, index) => {
+    li.addEventListener('click', () => {
+        playNextVideo(index);
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    popup.classList.remove('show');
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        popup.classList.remove('show');
+    }
+});
+
+let PopcurrentIndex = 0;
+
+function autoPlayVideos() {
+    videoContainer.innerHTML = videoData[PopcurrentIndex];
+    const progressBarWrapper = createProgressBar();
+    videoContainer.appendChild(progressBarWrapper);
+    const videoElement = videoContainer.querySelector('video');
+    const progressBar = progressBarWrapper.querySelector('.progress-bar');
+    videoElement.addEventListener('timeupdate', () => {
+        updateProgressBar(progressBar, videoElement);
+    });
+
+    videoElement.addEventListener('ended', () => {
+        PopcurrentIndex = (PopcurrentIndex + 1) % videoData.length;
+        autoPlayVideos();
+    });
+
+    videoElement.play();
+}
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        autoPlayVideos();
+    }, 1000);
+
+    if (listItems.length > 0) {
+        listItems[0].click();
+    }
+});
+videoContainer.addEventListener('click', () => {
+    const videoElement = videoContainer.querySelector('video');
+    const currentVideoIndex = videoData.findIndex(video => videoElement.src.includes(video));
+    popupMessage.textContent = `You clicked on item ${currentVideoIndex + 1}`;
+    popup.classList.add('show');
+});
+// h1 and P
+const closeButton = document.querySelector(".close");
+function updateModalContent(li) {
+    const heading = li.getAttribute("data-heading");
+    const point1 = li.getAttribute("data-point1");
+    const point2 = li.getAttribute("data-point2");
+    const point3 = li.getAttribute("data-point3");
+    const point4 = li.getAttribute("data-point4");
+    document.getElementById("main-heading").textContent = heading;
+    document.getElementById("point-1").textContent = point1;
+    document.getElementById("point-2").textContent = point2;
+    document.getElementById("point-3").textContent = point3;
+    document.getElementById("point-4").textContent = point4;
+    popup.style.display = "block";
+}
+const liElements = document.querySelectorAll("#all-haress-tab-container li");
+liElements.forEach(li => {
+    li.addEventListener("click", () => updateModalContent(li));
+});
+closeButton.addEventListener("click", () => {
+    popup.style.display = "none";
+});
+window.addEventListener("click", (event) => {
+    if (event.target === popup) {
+        popup.style.display = "none";
+    }
+});
+
+// All Harness
+
+// Pre Loader
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('preloader').classList.add('hide-preloader');
+
+        document.getElementById('content').style.display = 'block';
+    }, 1500); 
+});
+
+// Back To Top
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("backtotop-main-container").style.display = "block";
+    } else {
+        document.getElementById("backtotop-main-container").style.display = "none";
+    }
+};
+document.getElementById("back-to-top-btn").onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+// Back To Top

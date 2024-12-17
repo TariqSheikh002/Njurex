@@ -240,3 +240,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // CALENDLY
 
 // CAlendly End
+
+// Back To Top
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("backtotop-main-container").style.display = "block";
+    } else {
+        document.getElementById("backtotop-main-container").style.display = "none";
+    }
+};
+document.getElementById("back-to-top-btn").onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+// Back To Top
