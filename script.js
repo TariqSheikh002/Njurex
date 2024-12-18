@@ -1007,7 +1007,9 @@ const videoData = [
     '<video id="video1" class="fill-video rounded-video" autoplay muted><source src="video1.mp4" type="video/mp4"></video>',
     '<video id="video2" class="fill-video rounded-video" autoplay muted><source src="video2.mp4" type="video/mp4"></video>',
     '<video id="video3" class="fill-video rounded-video" autoplay muted><source src="video3.mp4" type="video/mp4"></video>',
-    '<video id="video4" class="fill-video rounded-video" autoplay muted><source src="video4.mp4" type="video/mp4"></video>'
+    '<video id="video4" class="fill-video rounded-video" autoplay muted><source src="video4.mp4" type="video/mp4"></video>',
+    '<video id="video5" class="fill-video rounded-video" autoplay muted><source src="video5.mp4" type="video/mp4"></video>',
+    '<video id="video6" class="fill-video rounded-video" autoplay muted><source src="video6.mp4" type="video/mp4"></video>'
 ];
 
 function createProgressBar() {
