@@ -2349,6 +2349,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     opacity: 1;
     border-left: 1px solid #c6c3c3;
     width: 25%;
@@ -2455,9 +2456,14 @@ body{
 @media only screen and (max-width: 768px) {
     #all-haress-tab-container {
         height: 50px;
+        width: 100%;
     }
     #all-haress-tab-container ul li {
         font-size: 10px;
+    }
+    #all-harness-second-main {
+        height: 400px;
+        width: 100%;
     }
     }
 
@@ -2475,7 +2481,9 @@ body{
         width: 100%;
         margin-top: -30px;
     }
-    
+    #all-haress-tab-container ul {
+        width: 100% !important;
+    }
     #all-harness-second-main {
         height: 200px;
     }
