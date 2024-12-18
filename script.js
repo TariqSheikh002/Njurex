@@ -652,16 +652,16 @@ document.querySelectorAll('.ourProduct-accordion-button').forEach(button => {
 
 // CHAT  IN WHATSAPP
 
-function openWhatsAppChat() {
-    const phoneNumber = '+92032963506'; 
-    const message = 'Hi, Thanks for Contacting Us.';
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappURL, '_blank');
-}
+// function openWhatsAppChat() {
+//     const phoneNumber = '+92032963506'; 
+//     const message = 'Hi, Thanks for Contacting Us.';
+//     const encodedMessage = encodeURIComponent(message);
+//     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+//     window.open(whatsappURL, '_blank');
+// }
 
-document.getElementById('sticky-message-box').addEventListener('click', openWhatsAppChat);
-document.getElementById('last-footer-top-left').addEventListener('click', openWhatsAppChat);
+// document.getElementById('sticky-message-box').addEventListener('click', openWhatsAppChat);
+// document.getElementById('last-footer-top-left').addEventListener('click', openWhatsAppChat);
 
 // CHAT  IN WHATSAPP END
 
@@ -998,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // All Harness
-popup = document.getElementById('popup');
+const popup = document.getElementById('popup');
 const popupMessage = document.getElementById('popup-message');
 const closeBtn = document.querySelector('.close');
 const videoContainer = document.getElementById('all-harness-second-main');
@@ -1132,15 +1132,6 @@ window.addEventListener("click", (event) => {
 
 // All Harness
 
-// Pre Loader
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.getElementById('preloader').classList.add('hide-preloader');
-
-        document.getElementById('content').style.display = 'block';
-    }, 1500); 
-});
-
 // Back To Top
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -1156,3 +1147,20 @@ document.getElementById("back-to-top-btn").onclick = function() {
     });
 };
 // Back To Top
+
+
+
+// Whatsapp
+function toggleChat() {
+    const whatsappIcon = document.getElementById('whatsapp-icon');
+    const whatsappPopup = document.getElementById('whatsapp-popup');
+    
+    // Toggle the popup visibility with smooth transition
+    if (whatsappPopup.classList.contains("show")) {
+        whatsappPopup.classList.remove("show");
+        whatsappIcon.classList.remove("open");
+    } else {
+        whatsappPopup.classList.add("show");
+        whatsappIcon.classList.add("open");
+    }
+}

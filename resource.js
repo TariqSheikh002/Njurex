@@ -163,17 +163,17 @@ document.addEventListener('click', function(event) {
 
 // CHAT  IN WHATSAPP
 
-function openWhatsAppChat() {
-    const phoneNumber = '+92032963506'; 
+// function openWhatsAppChat() {
+//     const phoneNumber = '+92032963506'; 
 
-    const message = 'Hi, Thanks for Contacting Us.';
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappURL, '_blank');
-}
+//     const message = 'Hi, Thanks for Contacting Us.';
+//     const encodedMessage = encodeURIComponent(message);
+//     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+//     window.open(whatsappURL, '_blank');
+// }
 
-document.getElementById('sticky-message-box').addEventListener('click', openWhatsAppChat);
-document.getElementById('last-footer-top-left').addEventListener('click', openWhatsAppChat);
+// document.getElementById('sticky-message-box').addEventListener('click', openWhatsAppChat);
+// document.getElementById('last-footer-top-left').addEventListener('click', openWhatsAppChat);
 
 // CHAT  IN WHATSAPP END
 
@@ -279,3 +279,19 @@ document.getElementById("back-to-top-btn").onclick = function() {
     });
 };
 // Back To Top
+
+
+// Whatsapp
+function toggleChat() {
+    const whatsappIcon = document.getElementById('whatsapp-icon');
+    const whatsappPopup = document.getElementById('whatsapp-popup');
+    
+    // Toggle the popup visibility with smooth transition
+    if (whatsappPopup.classList.contains("show")) {
+        whatsappPopup.classList.remove("show");
+        whatsappIcon.classList.remove("open");
+    } else {
+        whatsappPopup.classList.add("show");
+        whatsappIcon.classList.add("open");
+    }
+}
