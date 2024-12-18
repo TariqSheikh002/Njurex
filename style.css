@@ -2386,7 +2386,8 @@ body{
     z-index: 999999999;
     background: black;
     border-radius: 20px;
-    text-align: center;
+    border: 2px solid white;
+    text-align: left;
     width: 90%;
     height: 90%;
     position: relative;
@@ -2567,7 +2568,7 @@ body{
     height: fit-content;
     display: flex;
     position: relative;
-    /* bottom: 50px; */
+
     flex-direction: column;
     justify-content: center;
 }
@@ -2582,7 +2583,7 @@ body{
 
 #content-harness-points p {
     color: white;
-    font-size: x-small;
+    font-size: small;
     position: relative;
     /* top: 50px; */
 }

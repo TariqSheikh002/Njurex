@@ -192,6 +192,9 @@ sliderContainer.appendChild(firstImageClone);
 const totalHeight = sliderImages.length * 50;
 sliderContainer.style.height = `${totalHeight}px`;
 
+
+
+
 // Slider VERTICAL IMAGE END
 
 // faq visible
@@ -1048,6 +1051,11 @@ function playNextVideo(index) {
     newVideo.addEventListener('ended', () => {
         PopcurrentIndex = (PopcurrentIndex + 1) % videoData.length;
         playNextVideo(PopcurrentIndex);
+
+        // Simulate click on next <li> after video ends
+        if (listItems[PopcurrentIndex]) {
+            listItems[PopcurrentIndex].click();
+        }
     });
 
     newVideo.play();
@@ -1084,6 +1092,11 @@ function autoPlayVideos() {
     videoElement.addEventListener('ended', () => {
         PopcurrentIndex = (PopcurrentIndex + 1) % videoData.length;
         autoPlayVideos();
+
+        // Simulate click on next <li> after video ends
+        if (listItems[PopcurrentIndex]) {
+            listItems[PopcurrentIndex].click();
+        }
     });
 
     videoElement.play();
@@ -1098,12 +1111,14 @@ window.addEventListener('load', () => {
         listItems[0].click();
     }
 });
+
 videoContainer.addEventListener('click', () => {
     const videoElement = videoContainer.querySelector('video');
     const currentVideoIndex = videoData.findIndex(video => videoElement.src.includes(video));
     popupMessage.textContent = `You clicked on item ${currentVideoIndex + 1}`;
     popup.classList.add('show');
 });
+
 // h1 and P
 const closeButton = document.querySelector(".close");
 function updateModalContent(li) {
