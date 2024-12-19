@@ -1007,14 +1007,14 @@ const closeBtn = document.querySelector('.close');
 const videoContainer = document.getElementById('all-harness-second-main');
 const listItems = document.querySelectorAll('#all-haress-tab-container li');
 const videoData = [
-    '<video id="video1" class="fill-video rounded-video" autoplay muted><source src="video1.mp4" type="video/mp4"></video>',
-    '<video id="video2" class="fill-video rounded-video" autoplay muted><source src="video2.mp4" type="video/mp4"></video>',
-    '<video id="video3" class="fill-video rounded-video" autoplay muted><source src="video3.mp4" type="video/mp4"></video>',
-    '<video id="video4" class="fill-video rounded-video" autoplay muted><source src="video4.mp4" type="video/mp4"></video>',
-    '<video id="video5" class="fill-video rounded-video" autoplay muted><source src="video5.mp4" type="video/mp4"></video>',
-    '<video id="video6" class="fill-video rounded-video" autoplay muted><source src="video6.mp4" type="video/mp4"></video>'
+    '<video id="video1" class="fill-video rounded-video" autoplay loop muted><source src="video1.mp4" type="video/mp4"></video>',
+    '<video id="video2" class="fill-video rounded-video" autoplay loop muted><source src="video2.mp4" type="video/mp4"></video>',
+    '<video id="video3" class="fill-video rounded-video" autoplay loop muted><source src="video3.mp4" type="video/mp4"></video>',
+    '<video id="video4" class="fill-video rounded-video" autoplay loop muted><source src="video4.mp4" type="video/mp4"></video>',
+    '<video id="video5" class="fill-video rounded-video" autoplay loop muted><source src="video5.mp4" type="video/mp4"></video>',
+    '<video id="video6" class="fill-video rounded-video" autoplay loop muted><source src="video6.mp4" type="video/mp4"></video>'
 ];
-
+let PopcurrentIndex = 0;
 function createProgressBar() {
     const progressBarWrapper = document.createElement('div');
     progressBarWrapper.classList.add('progress-bar-wrapper');
@@ -1023,15 +1023,12 @@ function createProgressBar() {
     progressBarWrapper.appendChild(progressBar);
     return progressBarWrapper;
 }
-
 function updateProgressBar(progressBar, videoElement) {
     const percentage = (videoElement.currentTime / videoElement.duration) * 100;
     progressBar.style.width = `${percentage}%`;
 }
-
 function playNextVideo(index) {
     videoContainer.innerHTML = videoData[index];
-
     const contentHarnessRight = document.querySelector('#content-harness-right video');
     const newVideo = document.createElement('video');
     newVideo.setAttribute('src', `video${index + 1}.mp4`);
@@ -1039,88 +1036,35 @@ function playNextVideo(index) {
     newVideo.setAttribute('muted', '');
     newVideo.setAttribute('autoplay', '');
     contentHarnessRight.parentNode.replaceChild(newVideo, contentHarnessRight);
-
     const progressBarWrapper = createProgressBar();
     contentHarnessRight.parentNode.appendChild(progressBarWrapper);
     const progressBar = progressBarWrapper.querySelector('.progress-bar');
-    
     newVideo.addEventListener('timeupdate', () => {
         updateProgressBar(progressBar, newVideo);
     });
-
     newVideo.addEventListener('ended', () => {
         PopcurrentIndex = (PopcurrentIndex + 1) % videoData.length;
         playNextVideo(PopcurrentIndex);
-
-        // Simulate click on next <li> after video ends
         if (listItems[PopcurrentIndex]) {
             listItems[PopcurrentIndex].click();
         }
     });
-
     newVideo.play();
 }
-
-listItems.forEach((li, index) => {
-    li.addEventListener('click', () => {
-        playNextVideo(index);
-    });
-});
-
-closeBtn.addEventListener('click', () => {
-    popup.classList.remove('show');
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-        popup.classList.remove('show');
-    }
-});
-
-let PopcurrentIndex = 0;
-
-function autoPlayVideos() {
-    videoContainer.innerHTML = videoData[PopcurrentIndex];
-    const progressBarWrapper = createProgressBar();
-    videoContainer.appendChild(progressBarWrapper);
-    const videoElement = videoContainer.querySelector('video');
-    const progressBar = progressBarWrapper.querySelector('.progress-bar');
-    videoElement.addEventListener('timeupdate', () => {
-        updateProgressBar(progressBar, videoElement);
-    });
-
-    videoElement.addEventListener('ended', () => {
-        PopcurrentIndex = (PopcurrentIndex + 1) % videoData.length;
-        autoPlayVideos();
-
-        // Simulate click on next <li> after video ends
-        if (listItems[PopcurrentIndex]) {
-            listItems[PopcurrentIndex].click();
-        }
-    });
-
-    videoElement.play();
-}
-
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        autoPlayVideos();
-    }, 1000);
-
-    if (listItems.length > 0) {
-        listItems[0].click();
-    }
-});
-
 videoContainer.addEventListener('click', () => {
     const videoElement = videoContainer.querySelector('video');
     const currentVideoIndex = videoData.findIndex(video => videoElement.src.includes(video));
     popupMessage.textContent = `You clicked on item ${currentVideoIndex + 1}`;
     popup.classList.add('show');
 });
-
-// h1 and P
-const closeButton = document.querySelector(".close");
+closeBtn.addEventListener('click', () => {
+    popup.classList.remove('show');
+});
+window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        popup.classList.remove('show');
+    }
+});
 function updateModalContent(li) {
     const heading = li.getAttribute("data-heading");
     const point1 = li.getAttribute("data-point1");
@@ -1134,16 +1078,18 @@ function updateModalContent(li) {
     document.getElementById("point-4").textContent = point4;
     popup.style.display = "block";
 }
-const liElements = document.querySelectorAll("#all-haress-tab-container li");
-liElements.forEach(li => {
-    li.addEventListener("click", () => updateModalContent(li));
+listItems.forEach((li, index) => {
+    li.addEventListener('click', () => {
+        updateModalContent(li);
+        playNextVideo(index);
+    });
 });
-closeButton.addEventListener("click", () => {
-    popup.style.display = "none";
-});
-window.addEventListener("click", (event) => {
-    if (event.target === popup) {
-        popup.style.display = "none";
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        playNextVideo(PopcurrentIndex);
+    }, 1000);
+    if (listItems.length > 0) {
+        listItems[0].click();
     }
 });
 
