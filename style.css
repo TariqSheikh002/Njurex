@@ -3925,6 +3925,15 @@ justify-content: space-around;
     align-items: center;
     justify-content: center;
 }
+@media only screen and (max-width: 3000px) and (min-width: 1700px){
+    #bspecial-text {
+        display: flex;
+        position: relative;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+    }
+}
 #bspecial-text h6{
     margin-top: 7px;
     margin-left: 5px; 
@@ -4283,7 +4292,7 @@ justify-content: space-around;
     object-fit: fill;
     width: 40%;
     border-radius: 40px 0 0 0;
-    margin-top: 22%;
+    margin-top: 18%;
     height: 80%;
 }
 #right-img-2{
@@ -5438,14 +5447,15 @@ background-image: url('news\ card3.jpg');
         height: 90%;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: right;
         align-items: center;
+        width: 100%;
     }
     #social-icons-container a{
         transition: all 1s;
         border-radius: 10px;
         display: flex; 
-    
+        margin-left: 5px;
         align-items: center;
     }
     #footer-mid1-container{
